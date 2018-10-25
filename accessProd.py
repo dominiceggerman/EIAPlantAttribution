@@ -19,8 +19,9 @@ def connect(usr, pswrd):
 def getLocations(conn):
     # Create statement to select based on location ID
     try:
-        statement = """SELECT DISTINCT loc.id
+        statement = """SELECT DISTINCT loc.id, plt.eia_plant_id, plt.name
                         FROM maintenance.location AS loc
+                        INNER JOIN ts1.plant AS plt ON loc.id = ts1.
                         WHERE facility_id = 17
                         ORDER BY id
                     """
@@ -37,14 +38,14 @@ def getCapacityData(conn, location_id):
     start_date = str((datetime.datetime.now() + datetime.timedelta(-365 * 4)).strftime("%m-%d-%Y"))  # 4 years before today
     end_date = str(datetime.datetime.now().strftime("%m-%d-%Y"))  # Today
     # SQL statement
-    statement = """SELECT eod.gas_day, eod.scheduled_cap, lr.role_id
-                    FROM analysts.location_role_eod_history_v AS eod
-                    INNER JOIN maintenance.location_role AS lr ON eod.location_role_id = lr.id
-                    INNER JOIN maintenance.location AS loc ON lr.location_id = loc.id
-                    WHERE eod.gas_day BETWEEN {0} AND {1}
-                    AND loc.id = {2}
-                    ORDER BY eod.gas_day, lr.role_id;
-                """.format("'"+start_date+"'", "'"+end_date+"'", location_id)
+    statement = """SELECT ctnn.gas_day, SUM((ctnn.scheduled_cap + ctnn.no_notice_cap) * rv.sign *-1) AS scheduled_and_nn
+                    FROM analysts.captrans_with_no_notice AS ctnn
+                    INNER JOIN analysts.location_role_v AS lr ON ctnn.location_role_id = lr.id
+                    INNER JOIN analysts.location_v AS lv ON lr.location_id = lv.id
+                    INNER JOIN analysts.role_v AS rv ON lr.role_id = rv.id
+                    WHERE ctnn.gas_day BETWEEN {0} AND {1}
+                    AND l.facility_id IN
+                """.format("'"+start_date+"'", "'"+end_date+"'")
     # Read SQL and return
     df = pd.read_sql(statement, conn)
     return df
@@ -52,10 +53,12 @@ def getCapacityData(conn, location_id):
 
 if __name__ == "__main__":
     
+    # Get login creds for insightprod and EIA API
+    creds = readfile.readFile("creds.txt")
+    username, password, eia_key = creds[0], creds[1], creds[2]
+
     try:
         # Connect and query for location ID's
-        creds = readfile.readFile("creds.txt")
-        username, password = creds[0], creds[1]
         connection = connect(username, password)
         location_ids = getLocations(connection)
 
