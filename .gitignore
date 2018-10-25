@@ -1,3 +1,4 @@
 # Ignored files
 creds.txt
 __pycache__
+.vscode
