@@ -4,6 +4,7 @@ import getpass
 import psycopg2
 import pandas as pd
 import json
+import matplotlib.pyplot as plt
 from urllib.error import URLError, HTTPError
 from urllib.request import urlopen
 import readfile
@@ -26,7 +27,10 @@ def EIAPlantData(key, plant_code):
 
         # Convert JSON data we want to dataframe
         noms_data = jso["series"][0]["data"]
-        noms_df = pd.DataFrame(data=noms_data, columns=["Month", "Noms (mcf)"])
+        noms_df = pd.DataFrame(data=noms_data, columns=["eia_date", "eia_noms"])
+        noms_df = noms_df.iloc[::-1]  # Reverse df - oldest to newest
+        dates = ["{0}-{1}-{2}".format(s[:4], s[4:6], "01") for s in noms_df["eia_date"].values]
+        noms_df = noms_df.replace(noms_df["eia_date"].values, dates)
         # Get lat/long and start/end dates
         plant_lat, plant_long = float(jso["series"][0]["lat"]), float(jso["series"][0]["lon"])
         start_month, end_month = jso["series"][0]["start"], jso["series"][0]["end"]
@@ -72,47 +76,24 @@ def locationPlantMap(conn):
 
 # Get nominations data for a single location id
 def getCapacityData(conn, lat, lon, loc_id):
-    # With lat/long
-    if lat != None and lon != None and loc_id == None:
-        # Create lat/long boundries
-        latmin, latmax = lat - 0.1, lat + 0.1
-        longmin, longmax = lon - 0.1, lon + 0.1
-        # SQL statement
-        statement = """SELECT date_trunc('month', ctnn.gas_day)::date AS date, l.name AS loc_name , SUM((ctnn.scheduled_cap + ctnn.no_notice_cap) * r.sign * -1) AS scheduled_and_nn
-                        FROM analysts.captrans_with_no_notice AS ctnn
-                        INNER JOIN analysts.location_role_v AS lr ON ctnn.location_role_id = lr.id
-                        INNER JOIN analysts.location_v AS l ON lr.location_id = l.id
-                        INNER JOIN analysts.role_v AS r ON lr.role_id = r.id
-                        INNER JOIN analysts.county_v c ON l.county_id = c.id
-                        INNER JOIN analysts.state_v AS s ON c.state_id = s.id
-                        WHERE ctnn.gas_day BETWEEN '2014-01-01' AND '2018-06-01' 
-                        AND (l.facility_id IN (8, 10, 14, 17) AND lr.role_id = 2)
-                        AND l.latitude BETWEEN {0} AND {1}
-                        AND l.longitude BETWEEN {2} AND {3}
-                        GROUP BY 1, 2
-                        HAVING max(ctnn.scheduled_cap + ctnn.no_notice_cap) > 500
-                        ORDER BY 1, 2
-                    """.format("'"+str(latmin)+"'", "'"+str(latmax)+"'", "'"+str(longmin)+"'", "'"+str(longmax)+"'")
-                    # EDIT DATES ??
-    
-    # By Location ID
-    elif lat is None and lon is None and loc_id != None:
-        statement = """SELECT date_trunc('month', ctnn.gas_day)::date AS date, l.name AS loc_name , SUM((ctnn.scheduled_cap + ctnn.no_notice_cap) * r.sign * -1) AS scheduled_and_nn
-                        FROM analysts.captrans_with_no_notice AS ctnn
-                        INNER JOIN analysts.location_role_v AS lr ON ctnn.location_role_id = lr.id
-                        INNER JOIN analysts.location_v AS l ON lr.location_id = l.id
-                        WHERE ctnn.gas_day BETWEEN '2014-01-01' AND '2018-06-01' 
-                        AND lr.id = {0}
-                        GROUP BY 1, 2
-                        ORDER BY 1, 2
-                    """.format(loc_id)
-    print(statement)
+    statement = """SELECT date_trunc('month', ctnn.gas_day)::date AS insight_date, l.name AS loc_name, SUM((ctnn.scheduled_cap + ctnn.no_notice_cap) * r.sign * -1) AS insight_noms
+                    FROM analysts.captrans_with_no_notice AS ctnn
+                    INNER JOIN analysts.location_role_v AS lr ON ctnn.location_role_id = lr.id
+                    INNER JOIN analysts.location_v AS l ON lr.location_id = l.id
+                    INNER JOIN analysts.role_v AS r ON lr.role_id = r.id
+                    INNER JOIN analysts.county_v AS c ON l.county_id = c.id
+                    INNER JOIN analysts.state_v AS s ON c.state_id = s.id
+                    WHERE ctnn.gas_day BETWEEN '2014-01-01' AND '2018-06-01' 
+                    AND l.id = {0}
+                    GROUP BY 1, 2
+                    ORDER BY 1, 2
+                """.format(loc_id)
         
     try:
         # Read SQL and return
-        print("Executing SQL to obtain nominations data...")
+        print("Executing SQL to obtain nominations data from insightprod...")
         df = pd.read_sql(statement, conn)
-        return df
+        return df.drop(["loc_name"], axis=1)
     except:
         print("getCapacityData(): Error encountered while executing SQL. Exiting...")
         conn.close()
@@ -129,12 +110,24 @@ if __name__ == "__main__":
     connection = connect(username, password)
     plant_locs = locationPlantMap(connection)
 
+    # Temp plant code ??
     plant_code = plant_locs["eia_plant_code"].values[0]
 
-    eia_data = EIAPlantData(eia_key, plant_code)
+    eia_data = EIAPlantData(eia_key, 55965)
 
-    cap_df = getCapacityData(connection, None, None, plant_locs["location_id"].values[0])
-    print(cap_df)    
+    cap_data = getCapacityData(connection, None, None, 428621)
+
+    # print("Saving data to csv...")
+    # cap_data.to_csv("test_data.csv", index=False)
+
+    # Merge dataframes
+    merged_df = eia_data["noms_data"].merge(cap_data, how="left", left_on="eia_date", right_on="insight_date")
+    print(merged_df)
+
+    # # Plot
+    # plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
+    # plt.plot(merged_df["date"].values, merged_df["insight_noms"].values)
+    # plt.show()
 
 
 
