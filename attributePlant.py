@@ -3,8 +3,10 @@
 import getpass
 import psycopg2
 import pandas as pd
+import numpy as np
 import json
 import datetime
+import sklearn.metrics as sk
 import matplotlib.pyplot as plt
 from urllib.error import URLError, HTTPError
 from urllib.request import urlopen
@@ -123,8 +125,15 @@ if __name__ == "__main__":
 
     # Merge dataframes
     merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
+    # Take rows with non-NaN values
+    merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
+    print(merged_df)
 
-    # Plot
-    plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
-    plt.plot(merged_df["eia_date"].values, merged_df["insight_noms"].values)
-    plt.show()
+    # Score the R squared
+    r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values)
+    print(r2)
+
+    # # Plot
+    # plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
+    # plt.plot(merged_df["eia_date"].values, merged_df["insight_noms"].values)
+    # plt.show()
