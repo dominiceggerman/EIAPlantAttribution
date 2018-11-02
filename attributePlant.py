@@ -4,6 +4,7 @@ import getpass
 import psycopg2
 import pandas as pd
 import json
+import datetime
 import matplotlib.pyplot as plt
 from urllib.error import URLError, HTTPError
 from urllib.request import urlopen
@@ -29,7 +30,7 @@ def EIAPlantData(key, plant_code):
         noms_data = jso["series"][0]["data"]
         noms_df = pd.DataFrame(data=noms_data, columns=["eia_date", "eia_noms"])
         noms_df = noms_df.iloc[::-1]  # Reverse df - oldest to newest
-        dates = ["{0}-{1}-{2}".format(s[:4], s[4:6], "01") for s in noms_df["eia_date"].values]
+        dates = [datetime.datetime.strptime("{0}-{1}-{2}".format(s[:4], s[4:6], "01"), "%Y-%m-%d").date() for s in noms_df["eia_date"].values]  # Convert string to datetime
         noms_df = noms_df.replace(noms_df["eia_date"].values, dates)
         # Get lat/long and start/end dates
         plant_lat, plant_long = float(jso["series"][0]["lat"]), float(jso["series"][0]["lon"])
@@ -121,22 +122,9 @@ if __name__ == "__main__":
     # cap_data.to_csv("test_data.csv", index=False)
 
     # Merge dataframes
-    merged_df = eia_data["noms_data"].merge(cap_data, how="left", left_on="eia_date", right_on="insight_date")
-    print(merged_df)
+    merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
 
-    # # Plot
-    # plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
-    # plt.plot(merged_df["date"].values, merged_df["insight_noms"].values)
-    # plt.show()
-
-
-
-
-
-    # # DAN'S QUERY
-    # # Connect and get capacity data
-    # connection = connect(username, password)
-    # cap_df = getCapacityData(connection, eia_data["lat"], eia_data["long"], None)
-    # # Close
-    # connection.close()
-
+    # Plot
+    plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
+    plt.plot(merged_df["eia_date"].values, merged_df["insight_noms"].values)
+    plt.show()
