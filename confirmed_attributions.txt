@@ -1,0 +1,1 @@
+loc_id : 21285 | plant_code : 7237 | R2 : 0.7639 | date_att: 2018-11-03

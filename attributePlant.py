@@ -20,7 +20,7 @@ def EIAPlantData(key, plant_code):
     url = "http://api.eia.gov/series/?api_key={0}&series_id=ELEC.PLANT.CONS_TOT.{1}-NG-ALL.M".format(key, plant_code)
 
     try:
-        print("Getting EIA-based nominations data for plant code {0}...".format(plant_code))
+        print("Getting EIA-based nominations data...")
         # URL request, opener, reader
         response = urlopen(url)
         raw_byte = response.read()
@@ -141,10 +141,12 @@ if __name__ == "__main__":
     except:
         connection.close()
         print("Error encountered while querying for plant locations and codes.")
-    print("Found ")
+
+    print("Found {0} attributed plants".format(len(plant_locs["location_id"].values)))
 
     # Iterate through the "confirmed" plants
-    for (location_id, plant_code) in zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values):
+    for ind, (location_id, plant_code) in enumerate(zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values)):
+        print("| Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values))
         try:
             # Obtain EIA and insight data
             eia_data = EIAPlantData(eia_key, plant_code)
@@ -153,22 +155,21 @@ if __name__ == "__main__":
             connection.close()
             print("Error accessing EIA / insight nominations data.")
 
-        try:
-            # Merge dataframes
-            merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
-            # Take only rows with non-NaN values
-            merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
-            # Check length of array
-            if len(merged_df["insight_noms"].values) <= 5: # What number should go here??
-                pass
-                # Logic for handling in loop
-        except ValueError:
-            print("Encountered ValueError...")
-            if len(cap_data["insight_noms"].values) == 0:
-                print("Error: Insight nominations has no values.")
+        # Merge dataframes
+        merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
+        # Take only rows with non-NaN values
+        merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
+        # Check length of array
+        if len(merged_df["insight_noms"].values) <= 5: # What number should go here??
+            pass
+            # Logic for handling in loop
 
-        # Score the R squared
-        r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values) # May have to drop a certain value ??
+        try:
+            # Score the R squared
+            r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values) # May have to drop a certain value ??
+        except ValueError:
+            print("No overlapping dates for which to calculate r2.")
+            continue
 
         # Plot the results
         if options.graph:
@@ -177,11 +178,14 @@ if __name__ == "__main__":
         # Ask to confirm attribution
         save_it = input("Confirm this attribution (y/n): ")
         if save_it == "y" or save_it == "yes":
-            with open("confirmed_attributions.txt", mode="w") as logfile:
+            with open("confirmed_attributions.txt", mode="a") as logfile:
                 logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
         elif save_it == "n" or save_it == "no":
-            with open("attribution_issues.txt", mode="w") as logfile:
+            with open("attribution_issues.txt", mode="a") as logfile:
                 logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
         else:
             print("Point not confirmed or unconfirmed...")
+
+    # Close connection
+    connection.close()
         
