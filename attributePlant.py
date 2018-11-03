@@ -114,10 +114,10 @@ if __name__ == "__main__":
     plant_locs = locationPlantMap(connection)
 
     # Temp plant code ??
+    location_id = plant_locs["location_id"].values[0]
     plant_code = plant_locs["eia_plant_code"].values[0]
 
     eia_data = EIAPlantData(eia_key, 55965)
-
     cap_data = getCapacityData(connection, None, None, 428621)
 
     # print("Saving data to csv...")
@@ -134,12 +134,24 @@ if __name__ == "__main__":
 
     # Score the R squared
     r2 = sk.r2_score(merged_df["eia_noms"].values[:-1], merged_df["insight_noms"].values[:-1])
-    print(r2)
 
     # Plot
-    plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
-    plt.plot(merged_df["eia_date"].values, merged_df["insight_noms"].values)
-    plt.legend()
-    plt.legend().draggable()
-    plt.text(1, 1, "R2 = {0}".format(r2))
+    ax = plt.axes()
+    ax.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
+    ax.plot(merged_df["eia_date"].values, merged_df["insight_noms"].values)
+    plt.title("Plant code: {0}".format(plant_code))
+    plt.ylabel("Mcf/d")
+    plt.xticks(rotation=90)
+    legend = plt.legend(["EIA data", "Insight data"], frameon=False)
+    legend.draggable()
+    plt.text(0.9, 1.05, "$R^2$ = {:.4f}".format(r2), ha="center", va="center", transform=ax.transAxes)
+    print("loc_id : {} | plant_code : {} | R2 : {:.4f} | date: {} |\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
+    plt.tight_layout()
     plt.show()
+
+    # Ask to save
+    save_it = input("Confirm this attribution (y/n): ")
+    if save_it == "y" or save_it == "yes":
+        with open("confirmed_attributions.txt", mode="w") as logfile:
+            logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {} |\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
+        
