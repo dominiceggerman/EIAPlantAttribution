@@ -127,13 +127,19 @@ if __name__ == "__main__":
     merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
     # Take rows with non-NaN values
     merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
-    print(merged_df)
+    # Check length of array
+    if len(merged_df["insight_noms"].values) <= 5: # What number should go here??
+        pass
+        # Logic for handling in loop
 
     # Score the R squared
-    r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values)
+    r2 = sk.r2_score(merged_df["eia_noms"].values[:-1], merged_df["insight_noms"].values[:-1])
     print(r2)
 
-    # # Plot
-    # plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
-    # plt.plot(merged_df["eia_date"].values, merged_df["insight_noms"].values)
-    # plt.show()
+    # Plot
+    plt.plot(merged_df["eia_date"].values, merged_df["eia_noms"].values)
+    plt.plot(merged_df["eia_date"].values, merged_df["insight_noms"].values)
+    plt.legend()
+    plt.legend().draggable()
+    plt.text(1, 1, "R2 = {0}".format(r2))
+    plt.show()
