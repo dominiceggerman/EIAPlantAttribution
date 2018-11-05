@@ -20,7 +20,6 @@ def EIAPlantData(key, plant_code):
     url = "http://api.eia.gov/series/?api_key={0}&series_id=ELEC.PLANT.CONS_TOT.{1}-NG-ALL.M".format(key, plant_code)
 
     try:
-        print("Getting EIA-based nominations data...")
         # URL request, opener, reader
         response = urlopen(url)
         raw_byte = response.read()
@@ -55,7 +54,7 @@ def EIAPlantData(key, plant_code):
 def connect(usr, pswrd):
     # Establish connection with username and password
     conn = psycopg2.connect(dbname="insightprod", user=usr, password=pswrd, host="insightproddb")
-    print("Successfully connected to database...")
+    # print("Successfully connected to database...")
     return conn
 
 
@@ -79,25 +78,23 @@ def locationPlantMap(conn):
 
 
 # Get nominations data for a single location id
-def getCapacityData(conn, lat, lon, loc_id):
-    statement = """SELECT date_trunc('month', ctnn.gas_day)::date AS insight_date, l.name AS loc_name, SUM((ctnn.scheduled_cap + ctnn.no_notice_cap) * r.sign * -1) AS insight_noms
+def getCapacityData(conn, plt_id):
+    statement = """SELECT date_trunc('month', ctnn.gas_day)::date AS insight_date, SUM((ctnn.scheduled_cap + ctnn.no_notice_cap) * r.sign * -1) AS insight_noms
                     FROM analysts.captrans_with_no_notice AS ctnn
                     INNER JOIN analysts.location_role_v AS lr ON ctnn.location_role_id = lr.id
                     INNER JOIN analysts.location_v AS l ON lr.location_id = l.id
                     INNER JOIN analysts.role_v AS r ON lr.role_id = r.id
-                    INNER JOIN analysts.county_v AS c ON l.county_id = c.id
-                    INNER JOIN analysts.state_v AS s ON c.state_id = s.id
-                    WHERE ctnn.gas_day BETWEEN '2014-01-01' AND '2018-06-01' 
-                    AND l.id = {0}
-                    GROUP BY 1, 2
-                    ORDER BY 1, 2
-                """.format(loc_id)
+                    INNER JOIN ts1.location_plant_map AS lpm ON lpm.location_id = l.id
+                    INNER JOIN ts1.plant AS plt ON plt.id = lpm.plant_id
+                    WHERE ctnn.gas_day BETWEEN '2014-01-01' AND '2018-05-31'
+                    AND plt.eia_plant_code = {0}
+                    GROUP BY 1
+                """.format(plt_id)
         
     try:
         # Read SQL and return
-        print("Executing SQL to obtain nominations data from insightprod...")
         df = pd.read_sql(statement, conn)
-        return df.drop(["loc_name"], axis=1)
+        return df
     except:
         print("getCapacityData(): Error encountered while executing SQL. Exiting...")
         conn.close()
@@ -109,16 +106,25 @@ def analyzedPlants():
     analyzed_locs = []
     with open("attribution_issues.txt", mode="r") as file1:
         for line in file1:
-            loc = line.rstrip().split("|")[0].split(":")[1].strip()
-            analyzed_locs.append(int(loc))
+            try:
+                loc = line.rstrip().split("|")[0].split(":")[1].strip()
+                analyzed_locs.append(int(loc))
+            except IndexError:
+                pass
     with open("confirmed_attributions.txt", mode="r") as file2:
         for line in file2:
-            loc = line.rstrip().split("|")[0].split(":")[1].strip()
-            analyzed_locs.append(int(loc))
+            try:
+                loc = line.rstrip().split("|")[0].split(":")[1].strip()
+                analyzed_locs.append(int(loc))
+            except IndexError:
+                pass
     with open("database_issues.txt", mode="r") as file3:
         for line in file3:
-            loc = line.rstrip().split("|")[0].split(":")[1].strip()
-            analyzed_locs.append(int(loc))
+            try:
+                loc = line.rstrip().split("|")[0].split(":")[1].strip()
+                analyzed_locs.append(int(loc))
+            except IndexError:
+                pass
     return analyzed_locs
 
 
@@ -156,7 +162,7 @@ if __name__ == "__main__":
     connection = connect(username, password)
     try:
         plant_locs = locationPlantMap(connection)
-        print("Found {0} attributed plants".format(len(plant_locs["location_id"].values)))
+        print("Found {0} attributed plants in insightprod".format(len(plant_locs["location_id"].values)))
     except:
         connection.close()
         print("Error encountered while querying for plant locations and codes.")
@@ -168,16 +174,29 @@ if __name__ == "__main__":
     
     print("{0} plants have not been analyzed".format(len(plant_locs["location_id"].values)))
 
+    # Close connection
+    connection.close()
+
     # Iterate through the "confirmed" plants
     for ind, (location_id, plant_code) in enumerate(zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values)):
+        # Open connection
+        connection = connect(username, password)
+
         print("| Analyzing Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values)))
         try:
             # Obtain EIA and insight data
             eia_data = EIAPlantData(eia_key, plant_code)
-            cap_data = getCapacityData(connection, None, None, location_id)
+            cap_data = getCapacityData(connection, plant_code)
         except:
             connection.close()
             print("Error accessing EIA / insight nominations data.")
+
+        # Error Check
+        if cap_data is None:
+            print("No capacity data returned.")
+            with open("database_issues.txt", mode="a") as logfile:
+                logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
+            continue
 
         # Merge dataframes
         merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
@@ -190,7 +209,7 @@ if __name__ == "__main__":
 
         try:
             # Score the R squared
-            r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values) # May have to drop a certain value ??
+            r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values)
         except ValueError:
             print("No overlapping dates for which to calculate r2.")
             with open("database_issues.txt", mode="a") as logfile:
@@ -212,7 +231,6 @@ if __name__ == "__main__":
                 logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
         else:
             print("Point not confirmed or unconfirmed...")
-
-    # Close connection
-    connection.close()
         
+        # Close connection
+        connection.close()

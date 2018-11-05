@@ -1,0 +1,3 @@
+loc_id : 21300 | plant_code : 3526 | R2 : undefined | date_att: 2018-11-05
+loc_id : 21415 | plant_code : 7843 | R2 : undefined | date_att: 2018-11-05
+loc_id : 21423 | plant_code : 7887 | R2 : undefined | date_att: 2018-11-05
