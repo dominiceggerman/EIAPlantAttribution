@@ -115,6 +115,10 @@ def analyzedPlants():
         for line in file2:
             loc = line.rstrip().split("|")[0].split(":")[1].strip()
             analyzed_locs.append(int(loc))
+    with open("database_issues.txt", mode="r") as file3:
+        for line in file3:
+            loc = line.rstrip().split("|")[0].split(":")[1].strip()
+            analyzed_locs.append(int(loc))
     return analyzed_locs
 
 
@@ -142,7 +146,6 @@ if __name__ == "__main__":
     # Argparse and add arguments
     parser = argparse.ArgumentParser(description="Below is a list of optional arguements with descriptions. Please refer to README.md for full documentation...")
     parser.add_argument("-g", "--graph", help="Do not display graph.", action="store_false")
-    parser.add_argument("-s", "--skip", help="Skip previously analyzed plants", action="store_false")
     options = parser.parse_args()
     
     # Get login creds for insightprod and EIA API
@@ -190,6 +193,8 @@ if __name__ == "__main__":
             r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values) # May have to drop a certain value ??
         except ValueError:
             print("No overlapping dates for which to calculate r2.")
+            with open("database_issues.txt", mode="a") as logfile:
+                logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
             continue
 
         # Plot the results
@@ -197,11 +202,12 @@ if __name__ == "__main__":
             plotNominations(merged_df, location_id, plant_code, r2)
 
         # Ask to confirm attribution
-        save_it = input("Confirm this attribution (y/n): ")
-        if save_it == "y" or save_it == "yes":
+        if r2 >= 0.50:
+            print("Attribution confirmed (r2 > 50)")
             with open("confirmed_attributions.txt", mode="a") as logfile:
                 logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
-        elif save_it == "n" or save_it == "no":
+        elif r2 < 0.50:
+            print("Attribution issue (r2 < 50)")
             with open("attribution_issues.txt", mode="a") as logfile:
                 logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
         else:

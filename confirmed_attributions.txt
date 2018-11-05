@@ -7,3 +7,15 @@ loc_id : 21423 | plant_code : 7887 | R2 : 0.8494 | date_att: 2018-11-05
 loc_id : 21433 | plant_code : 55972 | R2 : 0.6813 | date_att: 2018-11-05
 loc_id : 21453 | plant_code : 1217 | R2 : 0.6685 | date_att: 2018-11-05
 loc_id : 21459 | plant_code : 8027 | R2 : 0.8887 | date_att: 2018-11-05
+loc_id : 21461 | plant_code : 8000 | R2 : 0.5181 | date_att: 2018-11-05
+loc_id : 21475 | plant_code : 56104 | R2 : 0.9422 | date_att: 2018-11-05
+loc_id : 21509 | plant_code : 2038 | R2 : 0.7557 | date_att: 2018-11-05
+loc_id : 21470 | plant_code : 56164 | R2 : 0.6404 | date_att: 2018-11-05
+loc_id : 21521 | plant_code : 1904 | R2 : 0.8129 | date_att: 2018-11-05
+loc_id : 22518 | plant_code : 3477 | R2 : 0.8689 | date_att: 2018-11-05
+loc_id : 22550 | plant_code : 55501 | R2 : 0.9229 | date_att: 2018-11-05
+loc_id : 22552 | plant_code : 55340 | R2 : 0.9939 | date_att: 2018-11-05
+loc_id : 22721 | plant_code : 199 | R2 : 0.9939 | date_att: 2018-11-05
+loc_id : 22911 | plant_code : 55075 | R2 : 0.6446 | date_att: 2018-11-05
+loc_id : 23270 | plant_code : 170 | R2 : 0.9504 | date_att: 2018-11-05
+loc_id : 23285 | plant_code : 55371 | R2 : 0.9504 | date_att: 2018-11-05
