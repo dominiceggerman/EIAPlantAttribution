@@ -1,2 +1,3 @@
 loc_id : 20096 | plant_code : 7137 | R2 : -0.7025 | date_att: 2018-11-03
 loc_id : 21156 | plant_code : 2454 | R2 : -5.0029 | date_att: 2018-11-03
+loc_id : 21458 | plant_code : 56013 | R2 : -1010.9211 | date_att: 2018-11-05

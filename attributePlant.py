@@ -104,6 +104,21 @@ def getCapacityData(conn, lat, lon, loc_id):
         return None
 
 
+# Get plants that have already been analyze
+def analyzedPlants():
+    analyzed_locs = []
+    with open("attribution_issues.txt", mode="r") as file1:
+        for line in file1:
+            loc = line.rstrip().split("|")[0].split(":")[1].strip()
+            analyzed_locs.append(int(loc))
+    with open("confirmed_attributions.txt", mode="r") as file2:
+        for line in file2:
+            loc = line.rstrip().split("|")[0].split(":")[1].strip()
+            analyzed_locs.append(int(loc))
+    return analyzed_locs
+
+
+
 # Plot EIA data versus insight data
 def plotNominations(df, loc, plt_code, r2):
     # Plot
@@ -138,15 +153,21 @@ if __name__ == "__main__":
     connection = connect(username, password)
     try:
         plant_locs = locationPlantMap(connection)
+        print("Found {0} attributed plants".format(len(plant_locs["location_id"].values)))
     except:
         connection.close()
         print("Error encountered while querying for plant locations and codes.")
 
-    print("Found {0} attributed plants".format(len(plant_locs["location_id"].values)))
+    # Remove plants from list that have already been analyzed
+    analyzed_locs = analyzedPlants()
+    for loc in analyzed_locs:
+        plant_locs = plant_locs[plant_locs.location_id != loc]
+    
+    print("{0} plants have not been analyzed".format(len(plant_locs["location_id"].values)))
 
     # Iterate through the "confirmed" plants
     for ind, (location_id, plant_code) in enumerate(zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values)):
-        print("| Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values))
+        print("| Analyzing Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values)))
         try:
             # Obtain EIA and insight data
             eia_data = EIAPlantData(eia_key, plant_code)
