@@ -152,85 +152,96 @@ if __name__ == "__main__":
     # Argparse and add arguments
     parser = argparse.ArgumentParser(description="Below is a list of optional arguements with descriptions. Please refer to README.md for full documentation...")
     parser.add_argument("-g", "--graph", help="Do not display graph.", action="store_false")
+    parser.add_argument("-m", "--master", help="Use masterCapData.csv to get insight noms (faster).", action="store_false")
     options = parser.parse_args()
-    
+
     # Get login creds for insightprod and EIA API
     creds = readfile.readFile("creds.txt")
     username, password, eia_key = creds[0], creds[1], creds[2]
-
-    # Connect, get location IDs and matching plant codes
-    connection = connect(username, password)
-    try:
-        plant_locs = locationPlantMap(connection)
-        print("Found {0} attributed plants in insightprod".format(len(plant_locs["location_id"].values)))
-    except:
-        connection.close()
-        print("Error encountered while querying for plant locations and codes.")
-
-    # Remove plants from list that have already been analyzed
-    analyzed_locs = analyzedPlants()
-    for loc in analyzed_locs:
-        plant_locs = plant_locs[plant_locs.location_id != loc]
     
-    print("{0} plants have not been analyzed".format(len(plant_locs["location_id"].values)))
+    # Refactor all this ??
+    # Read from master file
+    if options.master:
+        master_df = pd.read_csv("masterCapData.csv")
+        print(master_df)
+        plant_list = set(master_df["location_id"].values)
+        print(len(plant_list))
 
-    # Close connection
-    connection.close()
-
-    # Iterate through the "confirmed" plants
-    for ind, (location_id, plant_code) in enumerate(zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values)):
-        # Open connection
+    # Run a query each time
+    else:
+        # Connect, get location IDs and matching plant codes
         connection = connect(username, password)
-
-        print("| Analyzing Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values)))
         try:
-            # Obtain EIA and insight data
-            eia_data = EIAPlantData(eia_key, plant_code)
-            cap_data = getCapacityData(connection, plant_code)
+            plant_locs = locationPlantMap(connection)
+            print("Found {0} attributed plants in insightprod".format(len(plant_locs["location_id"].values)))
         except:
             connection.close()
-            print("Error accessing EIA / insight nominations data.")
+            print("Error encountered while querying for plant locations and codes.")
 
-        # Error Check
-        if cap_data is None:
-            print("No capacity data returned.")
-            with open("database_issues.txt", mode="a") as logfile:
-                logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
-            continue
-
-        # Merge dataframes
-        merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
-        # Take only rows with non-NaN values
-        merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
-        # Check length of array
-        if len(merged_df["insight_noms"].values) <= 5: # What number should go here??
-            pass
-            # Logic for handling in loop
-
-        try:
-            # Score the R squared
-            r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values)
-        except ValueError:
-            print("No overlapping dates for which to calculate r2.")
-            with open("database_issues.txt", mode="a") as logfile:
-                logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
-            continue
-
-        # Plot the results
-        if options.graph:
-            plotNominations(merged_df, location_id, plant_code, r2)
-
-        # Ask to confirm attribution
-        if r2 >= 0.50:
-            print("Attribution confirmed (r2 > 50)")
-            with open("confirmed_attributions.txt", mode="a") as logfile:
-                logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
-        elif r2 < 0.50:
-            print("Attribution issue (r2 < 50)")
-            with open("attribution_issues.txt", mode="a") as logfile:
-                logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
-        else:
-            print("Point not confirmed or unconfirmed...")
+        # Remove plants from list that have already been analyzed
+        analyzed_locs = analyzedPlants()
+        for loc in analyzed_locs:
+            plant_locs = plant_locs[plant_locs.location_id != loc]
         
+        print("{0} plants have not been analyzed".format(len(plant_locs["location_id"].values)))
+
         # Close connection
         connection.close()
+
+        # Iterate through the "confirmed" plants
+        for ind, (location_id, plant_code) in enumerate(zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values)):
+            # Open connection
+            connection = connect(username, password)
+
+            print("| Analyzing Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values)))
+            try:
+                # Obtain EIA and insight data
+                eia_data = EIAPlantData(eia_key, plant_code)
+                cap_data = getCapacityData(connection, plant_code)
+            except:
+                connection.close()
+                print("Error accessing EIA / insight nominations data.")
+
+            # Error Check
+            if cap_data is None:
+                print("No capacity data returned.")
+                with open("database_issues.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
+                continue
+
+            # Merge dataframes
+            merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
+            # Take only rows with non-NaN values
+            merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
+            # Check length of array
+            if len(merged_df["insight_noms"].values) <= 5: # What number should go here??
+                pass
+                # Logic for handling in loop
+
+            try:
+                # Score the R squared
+                r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values)
+            except ValueError:
+                print("No overlapping dates for which to calculate r2.")
+                with open("database_issues.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
+                continue
+
+            # Plot the results
+            if options.graph:
+                plotNominations(merged_df, location_id, plant_code, r2)
+
+            # Ask to confirm attribution
+            if r2 >= 0.50:
+                print("Attribution confirmed (r2 > 50)")
+                with open("confirmed_attributions.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
+            elif r2 < 0.50:
+                print("Attribution issue (r2 < 50)")
+                with open("attribution_issues.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(location_id, plant_code, r2, datetime.datetime.now().date()))
+            else:
+                print("Point not confirmed or unconfirmed...")
+            
+            # Close connection
+            connection.close()
