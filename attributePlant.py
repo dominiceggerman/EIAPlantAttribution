@@ -49,6 +49,9 @@ def EIAPlantData(key, plant_code):
         print("URL type error...")
         print("Reason:", err.reason)
 
+    except KeyError:
+        return None
+
 
 # Connect to insightprod database
 def connect(usr, pswrd):
@@ -189,7 +192,9 @@ if __name__ == "__main__":
         master_df = pd.read_csv("masterCapData.csv")
 
         # Iterate through unique EIA plant codes
-        for plant in list(set(master_df["plant_code"].values)):
+        for ind, plant in enumerate(list(set(master_df["plant_code"].values))):
+            print("Analyzing plant: {0} | {1}/{2}".format(plant, ind, len(list(set(master_df["plant_code"].values)))))
+
             # Filter the data for a single plant
             cap_data = master_df.loc[master_df["plant_code"] == plant]
             # Get location ID / ID's
@@ -198,8 +203,15 @@ if __name__ == "__main__":
             cap_data = cap_data.drop(columns=["location_id", "plant_code"])
             dates = [datetime.datetime.strptime("{0}-{1}-{2}".format(d[:4], d[5:7], d[8:10]), "%Y-%m-%d").date() for d in cap_data["insight_date"].values]
             cap_data = cap_data.replace(cap_data["insight_date"].values, dates)
+
             # Obtain EIA data
             eia_data = EIAPlantData(eia_key, plant)
+            if eia_data is None:
+                print("EIA data error.")
+                with open("database_issues.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(tuple(location_id), plant, datetime.datetime.now().date()))
+                continue
+
             # Merge the dataframes
             merged_df = mergeDf(eia_data, cap_data)
 
@@ -208,7 +220,7 @@ if __name__ == "__main__":
             if r2 is None:
                 print("No overlapping values on which to grade r2.")
                 with open("database_issues.txt", mode="a") as logfile:
-                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(tuple(location_id), plant, r2, datetime.datetime.now().date()))
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(tuple(location_id), plant, datetime.datetime.now().date()))
                 continue
 
             # Plot the results
@@ -219,7 +231,7 @@ if __name__ == "__main__":
             if r2 >= 0.50:
                 print("Attribution confirmed (r2 > 50)")
                 with open("confirmed_attributions.txt", mode="a") as logfile:
-                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(tuple(location_id), plant, datetime.datetime.now().date()))
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(tuple(location_id), plant, r2, datetime.datetime.now().date()))
             elif r2 < 0.50:
                 print("Attribution issue (r2 < 50)")
                 with open("attribution_issues.txt", mode="a") as logfile:
