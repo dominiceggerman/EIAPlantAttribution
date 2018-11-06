@@ -128,6 +128,29 @@ def analyzedPlants():
     return analyzed_locs
 
 
+# Merge EIA and insight dataframes
+def mergeDf(eia, insight):
+    # Merge dataframes
+    merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
+    # Take only rows with non-NaN values
+    merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
+    # Check length of array
+    if len(merged_df["insight_noms"].values) <= 5: # What number should go here??
+        pass
+        # Logic for handling in loop
+
+    return merged_df
+
+
+# Score the r2 of a merged dataframe
+def scoreR2(df):
+    try:
+        # Score the R squared
+        r2 = sk.r2_score(df["eia_noms"].values, df["insight_noms"].values)
+        return r2
+    except ValueError:
+        return None
+
 
 # Plot EIA data versus insight data
 def plotNominations(df, loc, plt_code, r2):
@@ -160,12 +183,49 @@ if __name__ == "__main__":
     username, password, eia_key = creds[0], creds[1], creds[2]
     
     # Refactor all this ??
-    # Read from master file
+    # Use master file to compare insight data to EIA
     if options.master:
+        # Read master data file
         master_df = pd.read_csv("masterCapData.csv")
-        print(master_df)
-        plant_list = set(master_df["location_id"].values)
-        print(len(plant_list))
+
+        # Iterate through unique EIA plant codes
+        for plant in list(set(master_df["plant_code"].values)):
+            plant = 55011
+            # Filter the data for a single plant
+            cap_data = master_df.loc[master_df["plant_code"] == plant]
+            print(cap_data)
+            # Get location ID / ID's
+            location_id = list(set(cap_data["location_id"].values))
+            print(location_id)
+            # Obtain EIA data
+            eia_data = EIAPlantData(eia_key, plant)
+            # Merge the dataframes
+            merged_df = mergeDf(eia_data, cap_data)
+
+            # Score the r2
+            r2 = scoreR2(merged_df)
+            if r2 is None:
+                print("No overlapping values on which to grade r2.")
+                with open("database_issues.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(tuple(location_id), plant, r2, datetime.datetime.now().date()))
+                continue
+
+            # Plot the results
+            if options.graph:
+                plotNominations(merged_df, location_id, plant, r2)
+
+            # Confirm / reject attribution
+            if r2 >= 0.50:
+                print("Attribution confirmed (r2 > 50)")
+                with open("confirmed_attributions.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(tuple(location_id), plant, datetime.datetime.now().date()))
+            elif r2 < 0.50:
+                print("Attribution issue (r2 < 50)")
+                with open("attribution_issues.txt", mode="a") as logfile:
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(tuple(location_id), plant, r2, datetime.datetime.now().date()))
+            else:
+                print("Point not confirmed or unconfirmed...")
+
 
     # Run a query each time
     else:
@@ -209,20 +269,13 @@ if __name__ == "__main__":
                     logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
                 continue
 
-            # Merge dataframes
-            merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
-            # Take only rows with non-NaN values
-            merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
-            # Check length of array
-            if len(merged_df["insight_noms"].values) <= 5: # What number should go here??
-                pass
-                # Logic for handling in loop
+            # Merge the dataframes
+            merged_df = mergeDf(eia_data, cap_data)
 
-            try:
-                # Score the R squared
-                r2 = sk.r2_score(merged_df["eia_noms"].values, merged_df["insight_noms"].values)
-            except ValueError:
-                print("No overlapping dates for which to calculate r2.")
+            # Score the r2
+            r2 = scoreR2(merged_df)
+            if r2 is None:
+                print("No overlapping values on which to grade r2.")
                 with open("database_issues.txt", mode="a") as logfile:
                     logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(location_id, plant_code, datetime.datetime.now().date()))
                 continue
@@ -231,7 +284,7 @@ if __name__ == "__main__":
             if options.graph:
                 plotNominations(merged_df, location_id, plant_code, r2)
 
-            # Ask to confirm attribution
+            # Confirm / reject attribution
             if r2 >= 0.50:
                 print("Attribution confirmed (r2 > 50)")
                 with open("confirmed_attributions.txt", mode="a") as logfile:
