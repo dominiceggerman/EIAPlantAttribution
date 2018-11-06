@@ -190,7 +190,6 @@ if __name__ == "__main__":
 
         # Iterate through unique EIA plant codes
         for plant in list(set(master_df["plant_code"].values)):
-            plant = 55011
             # Filter the data for a single plant
             cap_data = master_df.loc[master_df["plant_code"] == plant]
             # Get location ID / ID's
