@@ -131,7 +131,7 @@ def analyzedPlants():
 # Merge EIA and insight dataframes
 def mergeDf(eia, insight):
     # Merge dataframes
-    merged_df = eia_data["noms_data"].join(cap_data.set_index("insight_date"), on="eia_date")
+    merged_df = eia["noms_data"].join(insight.set_index("insight_date"), on="eia_date")
     # Take only rows with non-NaN values
     merged_df = merged_df[pd.notnull(merged_df['insight_noms'])]
     # Check length of array
@@ -193,10 +193,12 @@ if __name__ == "__main__":
             plant = 55011
             # Filter the data for a single plant
             cap_data = master_df.loc[master_df["plant_code"] == plant]
-            print(cap_data)
             # Get location ID / ID's
             location_id = list(set(cap_data["location_id"].values))
-            print(location_id)
+            # Drop unnecessary columns and convert dates from str to datetime
+            cap_data = cap_data.drop(columns=["location_id", "plant_code"])
+            dates = [datetime.datetime.strptime("{0}-{1}-{2}".format(d[:4], d[5:7], d[8:10]), "%Y-%m-%d").date() for d in cap_data["insight_date"].values]
+            cap_data = cap_data.replace(cap_data["insight_date"].values, dates)
             # Obtain EIA data
             eia_data = EIAPlantData(eia_key, plant)
             # Merge the dataframes

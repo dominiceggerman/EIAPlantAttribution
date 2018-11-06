@@ -1,5 +1,0 @@
-loc_id : 21285 | plant_code : 7237 | R2 : 0.7639 | date_att: 2018-11-05
-loc_id : 21344 | plant_code : 55011 | R2 : 0.9323 | date_att: 2018-11-05
-loc_id : 21345 | plant_code : 55010 | R2 : 0.7863 | date_att: 2018-11-05
-loc_id : 21433 | plant_code : 55972 | R2 : 0.6813 | date_att: 2018-11-05
-loc_id : 21453 | plant_code : 1217 | R2 : 0.6685 | date_att: 2018-11-05
