@@ -178,7 +178,7 @@ if __name__ == "__main__":
     # Argparse and add arguments
     parser = argparse.ArgumentParser(description="Below is a list of optional arguements with descriptions. Please refer to README.md for full documentation...")
     parser.add_argument("-g", "--graph", help="Do not display graph.", action="store_false")
-    parser.add_argument("-m", "--master", help="Use masterCapData.csv to get insight noms (faster).", action="store_false")
+    parser.add_argument("-m", "--master", help="Use masterCapData.csv to get insight noms (faster).", action="store_false")  #Change this name
     options = parser.parse_args()
 
     # Get login creds for insightprod and EIA API
@@ -209,7 +209,7 @@ if __name__ == "__main__":
             if eia_data is None:
                 print("EIA data error.")
                 with open("database_issues.txt", mode="a") as logfile:
-                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(tuple(location_id), plant, datetime.datetime.now().date()))
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(";".join(map(str,tuple(location_id))), plant, datetime.datetime.now().date()))
                 continue
 
             # Merge the dataframes
@@ -220,7 +220,7 @@ if __name__ == "__main__":
             if r2 is None:
                 print("No overlapping values on which to grade r2.")
                 with open("database_issues.txt", mode="a") as logfile:
-                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(tuple(location_id), plant, datetime.datetime.now().date()))
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : undefined | date_att: {}\n".format(";".join(map(str,tuple(location_id))), plant, datetime.datetime.now().date()))
                 continue
 
             # Plot the results
@@ -231,11 +231,11 @@ if __name__ == "__main__":
             if r2 >= 0.50:
                 print("Attribution confirmed (r2 > 50)")
                 with open("confirmed_attributions.txt", mode="a") as logfile:
-                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(tuple(location_id), plant, r2, datetime.datetime.now().date()))
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(";".join(map(str,tuple(location_id))), plant, r2, datetime.datetime.now().date()))
             elif r2 < 0.50:
                 print("Attribution issue (r2 < 50)")
                 with open("attribution_issues.txt", mode="a") as logfile:
-                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(tuple(location_id), plant, r2, datetime.datetime.now().date()))
+                    logfile.write("loc_id : {} | plant_code : {} | R2 : {:.4f} | date_att: {}\n".format(";".join(map(str,tuple(location_id))), plant, r2, datetime.datetime.now().date()))
             else:
                 print("Point not confirmed or unconfirmed...")
 

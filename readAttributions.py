@@ -13,9 +13,7 @@ def readAttribs(files):
                     entry = line.rstrip().split("|")
                     date = entry[3].split(":")[1].strip()
                     plant = entry[1].split(":")[1].strip()
-                    loc_id = entry[0].split(":")[1].strip()[1:-1]
-                    if loc_id[-1] != ",":
-                        loc_id = loc_id + ","
+                    loc_id = entry[0].split(":")[1].strip()
                     r2 = entry[2].split(":")[1].strip()
 
                     try:
@@ -27,7 +25,7 @@ def readAttribs(files):
                         status = "N/A"
 
                     # Write to file
-                    line = date + "," + plant + "," + loc_id + r2 + "," + status + "\n"
+                    line = date + "," + plant + "," + loc_id + "," + r2 + "," + status + "\n"
                     out_file.write(line)
 
 

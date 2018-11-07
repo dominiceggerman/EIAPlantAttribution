@@ -1,296 +1,296 @@
-loc_id : (80601,) | plant_code : 2048 | R2 : 0.2927 | date_att: 2018-11-06
-loc_id : (28646,) | plant_code : 55306 | R2 : -1.4963 | date_att: 2018-11-06
-loc_id : (24299,) | plant_code : 2068 | R2 : -2.4639 | date_att: 2018-11-06
-loc_id : (24300,) | plant_code : 2070 | R2 : -121.2847 | date_att: 2018-11-06
-loc_id : (83858,) | plant_code : 55327 | R2 : -17.0924 | date_att: 2018-11-06
-loc_id : (84290, 86398) | plant_code : 2092 | R2 : -2.0508 | date_att: 2018-11-06
-loc_id : (423616, 84429) | plant_code : 6190 | R2 : 0.1139 | date_att: 2018-11-06
-loc_id : (83149, 83183) | plant_code : 47 | R2 : -1.4897 | date_att: 2018-11-06
-loc_id : (28756,) | plant_code : 55343 | R2 : -9.0821 | date_att: 2018-11-06
-loc_id : (28017,) | plant_code : 55347 | R2 : 0.1823 | date_att: 2018-11-06
-loc_id : (30662, 62591) | plant_code : 54 | R2 : 0.1653 | date_att: 2018-11-06
-loc_id : (31179,) | plant_code : 4162 | R2 : -29.0424 | date_att: 2018-11-06
-loc_id : (86329,) | plant_code : 6223 | R2 : -2.3265 | date_att: 2018-11-06
-loc_id : (83643,) | plant_code : 55377 | R2 : -12.1529 | date_att: 2018-11-06
-loc_id : (28272, 447418) | plant_code : 55382 | R2 : -0.0671 | date_att: 2018-11-06
-loc_id : (59956,) | plant_code : 55391 | R2 : 0.2421 | date_att: 2018-11-06
-loc_id : (84896, 410458) | plant_code : 55392 | R2 : -0.2036 | date_att: 2018-11-06
-loc_id : (403851, 403791) | plant_code : 55395 | R2 : 0.1945 | date_att: 2018-11-06
-loc_id : (449738, 30606) | plant_code : 55397 | R2 : -2.0265 | date_att: 2018-11-06
-loc_id : (432008, 80756) | plant_code : 55406 | R2 : -0.7459 | date_att: 2018-11-06
-loc_id : (28575,) | plant_code : 117 | R2 : -58.3260 | date_att: 2018-11-06
-loc_id : (125328,) | plant_code : 55414 | R2 : 0.3749 | date_att: 2018-11-06
-loc_id : (32002, 125348) | plant_code : 55415 | R2 : -0.3020 | date_att: 2018-11-06
-loc_id : (407051, 28379, 425411) | plant_code : 120 | R2 : -1.9468 | date_att: 2018-11-06
-loc_id : (84904, 425985, 29132) | plant_code : 55417 | R2 : 0.0541 | date_att: 2018-11-06
-loc_id : (426505, 23407) | plant_code : 55418 | R2 : -1.4280 | date_att: 2018-11-06
-loc_id : (413872,) | plant_code : 55419 | R2 : -34.2867 | date_att: 2018-11-06
-loc_id : (28840,) | plant_code : 126 | R2 : -7.1683 | date_att: 2018-11-06
-loc_id : (28917,) | plant_code : 55433 | R2 : -1.1529 | date_att: 2018-11-06
-loc_id : (86991,) | plant_code : 55438 | R2 : -2.9817 | date_att: 2018-11-06
-loc_id : (80633, 408363) | plant_code : 55440 | R2 : -4.0569 | date_att: 2018-11-06
-loc_id : (27880, 27879) | plant_code : 55453 | R2 : -8.9814 | date_att: 2018-11-06
-loc_id : (85838,) | plant_code : 55455 | R2 : -2.3985 | date_att: 2018-11-06
-loc_id : (28576,) | plant_code : 160 | R2 : -1.4020 | date_att: 2018-11-06
-loc_id : (83012,) | plant_code : 55478 | R2 : -2.6326 | date_att: 2018-11-06
-loc_id : (28672, 432101, 431312) | plant_code : 55481 | R2 : -1.7848 | date_att: 2018-11-06
-loc_id : (86756,) | plant_code : 2241 | R2 : -0.6598 | date_att: 2018-11-06
-loc_id : (84906,) | plant_code : 55496 | R2 : -0.4010 | date_att: 2018-11-06
-loc_id : (403982,) | plant_code : 55502 | R2 : 0.1005 | date_att: 2018-11-06
-loc_id : (27861,) | plant_code : 55504 | R2 : -292.9519 | date_att: 2018-11-06
-loc_id : (27866,) | plant_code : 55505 | R2 : -10.6251 | date_att: 2018-11-06
-loc_id : (85842,) | plant_code : 55522 | R2 : -0.1660 | date_att: 2018-11-06
-loc_id : (415401, 445611) | plant_code : 55524 | R2 : 0.0005 | date_att: 2018-11-06
-loc_id : (28660,) | plant_code : 55544 | R2 : -1.4697 | date_att: 2018-11-06
-loc_id : (425771, 29028) | plant_code : 2324 | R2 : 0.0158 | date_att: 2018-11-06
-loc_id : (85610, 85623) | plant_code : 2336 | R2 : -10.8852 | date_att: 2018-11-06
-loc_id : (429088,) | plant_code : 2367 | R2 : -339.9265 | date_att: 2018-11-06
-loc_id : (83241, 404068, 62805) | plant_code : 55620 | R2 : -2.7017 | date_att: 2018-11-06
-loc_id : (425787, 29011) | plant_code : 55622 | R2 : -0.0176 | date_att: 2018-11-06
-loc_id : (83971, 29029) | plant_code : 329 | R2 : 0.3067 | date_att: 2018-11-06
-loc_id : (27877,) | plant_code : 55645 | R2 : -2.4023 | date_att: 2018-11-06
-loc_id : (30842,) | plant_code : 2406 | R2 : -7.0046 | date_att: 2018-11-06
-loc_id : (30610,) | plant_code : 55654 | R2 : -8.6624 | date_att: 2018-11-06
-loc_id : (145801, 83983, 29087) | plant_code : 55656 | R2 : -4.2030 | date_att: 2018-11-06
-loc_id : (30014,) | plant_code : 2411 | R2 : -22.0573 | date_att: 2018-11-06
-loc_id : (32025, 29150) | plant_code : 55661 | R2 : -0.6101 | date_att: 2018-11-06
-loc_id : (29896, 29897) | plant_code : 55662 | R2 : -1.3514 | date_att: 2018-11-06
-loc_id : (24771, 84910) | plant_code : 55664 | R2 : -0.9037 | date_att: 2018-11-06
-loc_id : (23942, 30478) | plant_code : 55667 | R2 : -4.2807 | date_att: 2018-11-06
-loc_id : (23294,) | plant_code : 10627 | R2 : -1.5025 | date_att: 2018-11-06
-loc_id : (29018, 425724) | plant_code : 55687 | R2 : -2.3878 | date_att: 2018-11-06
-loc_id : (28768,) | plant_code : 2442 | R2 : -37.4418 | date_att: 2018-11-06
-loc_id : (28543,) | plant_code : 2444 | R2 : -12.3286 | date_att: 2018-11-06
-loc_id : (85827,) | plant_code : 2446 | R2 : -4.4070 | date_att: 2018-11-06
-loc_id : (30546, 423724) | plant_code : 55694 | R2 : -0.8517 | date_att: 2018-11-06
-loc_id : (21156,) | plant_code : 2454 | R2 : -5.0243 | date_att: 2018-11-06
-loc_id : (83968, 29077, 428998) | plant_code : 10649 | R2 : -0.4847 | date_att: 2018-11-06
-loc_id : (29928,) | plant_code : 55733 | R2 : -0.0679 | date_att: 2018-11-06
-loc_id : (435624, 62771) | plant_code : 2539 | R2 : -3.2845 | date_att: 2018-11-06
-loc_id : (405312,) | plant_code : 6635 | R2 : -0.4846 | date_att: 2018-11-06
-loc_id : (84035,) | plant_code : 10745 | R2 : -7.7618 | date_att: 2018-11-06
-loc_id : (85847,) | plant_code : 55802 | R2 : 0.4680 | date_att: 2018-11-06
-loc_id : (27896,) | plant_code : 508 | R2 : 0.0000 | date_att: 2018-11-06
-loc_id : (444750,) | plant_code : 59926 | R2 : -0.0167 | date_att: 2018-11-06
-loc_id : (31976,) | plant_code : 55833 | R2 : -0.9455 | date_att: 2018-11-06
-loc_id : (27882, 27942) | plant_code : 55835 | R2 : -3.7743 | date_att: 2018-11-06
-loc_id : (82474, 410434) | plant_code : 544 | R2 : -2.9733 | date_att: 2018-11-06
-loc_id : (29021, 425782) | plant_code : 55841 | R2 : -1.0313 | date_att: 2018-11-06
-loc_id : (425384, 27005) | plant_code : 562 | R2 : 0.1655 | date_att: 2018-11-06
-loc_id : (125417, 428557, 145638) | plant_code : 564 | R2 : -2.3863 | date_att: 2018-11-06
-loc_id : (83731, 130703) | plant_code : 2625 | R2 : -0.4523 | date_att: 2018-11-06
-loc_id : (125265, 441756) | plant_code : 609 | R2 : -1.0312 | date_att: 2018-11-06
-loc_id : (125451, 125452) | plant_code : 613 | R2 : -2.5013 | date_att: 2018-11-06
-loc_id : (125269, 443431) | plant_code : 617 | R2 : -0.1078 | date_att: 2018-11-06
-loc_id : (125284, 125439) | plant_code : 621 | R2 : -6.1146 | date_att: 2018-11-06
-loc_id : (125294,) | plant_code : 624 | R2 : -10.5064 | date_att: 2018-11-06
-loc_id : (417922,) | plant_code : 10870 | R2 : -2.1620 | date_att: 2018-11-06
-loc_id : (125240,) | plant_code : 630 | R2 : -3.2626 | date_att: 2018-11-06
-loc_id : (62718,) | plant_code : 2682 | R2 : -1.2275 | date_att: 2018-11-06
-loc_id : (125179, 31975) | plant_code : 634 | R2 : -16.4215 | date_att: 2018-11-06
-loc_id : (426130, 80839) | plant_code : 638 | R2 : -1.5388 | date_att: 2018-11-06
-loc_id : (85871,) | plant_code : 6791 | R2 : -20.1551 | date_att: 2018-11-06
-loc_id : (125249, 125253) | plant_code : 663 | R2 : -1.1626 | date_att: 2018-11-06
-loc_id : (125153, 125285) | plant_code : 665 | R2 : -0.5963 | date_att: 2018-11-06
-loc_id : (125379,) | plant_code : 675 | R2 : -0.3940 | date_att: 2018-11-06
-loc_id : (125489, 31994) | plant_code : 676 | R2 : -0.5782 | date_att: 2018-11-06
-loc_id : (30611, 449742) | plant_code : 55976 | R2 : -0.1313 | date_att: 2018-11-06
-loc_id : (125263,) | plant_code : 683 | R2 : -8.2367 | date_att: 2018-11-06
-loc_id : (125318,) | plant_code : 688 | R2 : -0.2260 | date_att: 2018-11-06
-loc_id : (125407,) | plant_code : 689 | R2 : -0.5770 | date_att: 2018-11-06
-loc_id : (125304,) | plant_code : 693 | R2 : -8.2565 | date_att: 2018-11-06
-loc_id : (21458,) | plant_code : 56013 | R2 : -1010.9211 | date_att: 2018-11-06
-loc_id : (29882,) | plant_code : 56017 | R2 : 0.0000 | date_att: 2018-11-06
-loc_id : (449951,) | plant_code : 56047 | R2 : 0.0000 | date_att: 2018-11-06
-loc_id : (30584,) | plant_code : 2847 | R2 : -5.2287 | date_att: 2018-11-06
-loc_id : (83610,) | plant_code : 2854 | R2 : -5.2319 | date_att: 2018-11-06
-loc_id : (83609,) | plant_code : 2869 | R2 : 0.0000 | date_att: 2018-11-06
-loc_id : (406682,) | plant_code : 4939 | R2 : 0.3784 | date_att: 2018-11-06
-loc_id : (447312, 450249, 447311) | plant_code : 50006 | R2 : -29.9213 | date_att: 2018-11-06
-loc_id : (86063,) | plant_code : 56151 | R2 : -0.2921 | date_att: 2018-11-06
-loc_id : (23306,) | plant_code : 54104 | R2 : -2.1719 | date_att: 2018-11-06
-loc_id : (436305, 422965, 85382) | plant_code : 862 | R2 : -0.0429 | date_att: 2018-11-06
-loc_id : (60053,) | plant_code : 56166 | R2 : -0.2281 | date_att: 2018-11-06
-loc_id : (447143,) | plant_code : 52072 | R2 : 0.1806 | date_att: 2018-11-06
-loc_id : (428996,) | plant_code : 52085 | R2 : -11.8591 | date_att: 2018-11-06
-loc_id : (84474, 84371, 84475) | plant_code : 887 | R2 : 0.2159 | date_att: 2018-11-06
-loc_id : (443794,) | plant_code : 58236 | R2 : 0.4999 | date_att: 2018-11-06
-loc_id : (29208,) | plant_code : 913 | R2 : 0.4775 | date_att: 2018-11-06
-loc_id : (29529,) | plant_code : 56227 | R2 : 0.1069 | date_att: 2018-11-06
-loc_id : (425751, 29007) | plant_code : 7082 | R2 : -17.5726 | date_att: 2018-11-06
-loc_id : (29027,) | plant_code : 56237 | R2 : -2.7272 | date_att: 2018-11-06
-loc_id : (68141,) | plant_code : 56238 | R2 : -0.1544 | date_att: 2018-11-06
-loc_id : (446220,) | plant_code : 52151 | R2 : -2.5810 | date_att: 2018-11-06
-loc_id : (405440,) | plant_code : 3008 | R2 : -1.9697 | date_att: 2018-11-06
-loc_id : (29040, 145811, 83999) | plant_code : 50134 | R2 : -88.8223 | date_att: 2018-11-06
-loc_id : (24853,) | plant_code : 56283 | R2 : -18.3093 | date_att: 2018-11-06
-loc_id : (20096,) | plant_code : 7137 | R2 : -0.7025 | date_att: 2018-11-06
-loc_id : (30593, 404177) | plant_code : 7158 | R2 : -0.2879 | date_att: 2018-11-06
-loc_id : (59307,) | plant_code : 7159 | R2 : 0.1839 | date_att: 2018-11-06
-loc_id : (84724,) | plant_code : 1048 | R2 : -0.2044 | date_att: 2018-11-06
-loc_id : (62513,) | plant_code : 54324 | R2 : -0.9663 | date_att: 2018-11-06
-loc_id : (442931,) | plant_code : 58420 | R2 : -1.9939 | date_att: 2018-11-06
-loc_id : (31978, 125131) | plant_code : 7238 | R2 : -11.7146 | date_att: 2018-11-06
-loc_id : (146290,) | plant_code : 7242 | R2 : 0.4806 | date_att: 2018-11-06
-loc_id : (130633,) | plant_code : 3148 | R2 : -0.7780 | date_att: 2018-11-06
-loc_id : (31980,) | plant_code : 54365 | R2 : -1.0004 | date_att: 2018-11-06
-loc_id : (86393,) | plant_code : 7281 | R2 : -7.5189 | date_att: 2018-11-06
-loc_id : (27925,) | plant_code : 56445 | R2 : -1.2327 | date_att: 2018-11-06
-loc_id : (86330, 86331) | plant_code : 7296 | R2 : -3.6607 | date_att: 2018-11-06
-loc_id : (125177, 31988) | plant_code : 7302 | R2 : -6.6206 | date_att: 2018-11-06
-loc_id : (28857,) | plant_code : 56458 | R2 : -1.7523 | date_att: 2018-11-06
-loc_id : (125133,) | plant_code : 54426 | R2 : -0.3272 | date_att: 2018-11-06
-loc_id : (85012,) | plant_code : 7325 | R2 : -28.8609 | date_att: 2018-11-06
-loc_id : (86100,) | plant_code : 56497 | R2 : 0.2468 | date_att: 2018-11-06
-loc_id : (125114,) | plant_code : 7345 | R2 : -5.0978 | date_att: 2018-11-06
-loc_id : (85622,) | plant_code : 56500 | R2 : 0.1274 | date_att: 2018-11-06
-loc_id : (426330,) | plant_code : 1230 | R2 : -0.2001 | date_att: 2018-11-06
-loc_id : (31995, 125246) | plant_code : 7380 | R2 : -1.2055 | date_att: 2018-11-06
-loc_id : (83249,) | plant_code : 50389 | R2 : -66.1601 | date_att: 2018-11-06
-loc_id : (86328,) | plant_code : 1239 | R2 : -1.3659 | date_att: 2018-11-06
-loc_id : (27719,) | plant_code : 7393 | R2 : -0.6409 | date_att: 2018-11-06
-loc_id : (86367,) | plant_code : 1252 | R2 : 0.2957 | date_att: 2018-11-06
-loc_id : (405736,) | plant_code : 56556 | R2 : -8.4318 | date_att: 2018-11-06
-loc_id : (428460,) | plant_code : 56564 | R2 : -1.2947 | date_att: 2018-11-06
-loc_id : (83011,) | plant_code : 3325 | R2 : -1.9890 | date_att: 2018-11-06
-loc_id : (85877,) | plant_code : 1279 | R2 : -9.8039 | date_att: 2018-11-06
-loc_id : (84198,) | plant_code : 7425 | R2 : -1.6131 | date_att: 2018-11-06
-loc_id : (85913,) | plant_code : 1295 | R2 : -0.3863 | date_att: 2018-11-06
-loc_id : (442920, 443194, 68293) | plant_code : 56603 | R2 : -6.3800 | date_att: 2018-11-06
-loc_id : (28477,) | plant_code : 7456 | R2 : -2.1216 | date_att: 2018-11-06
-loc_id : (441916,) | plant_code : 50481 | R2 : 0.1184 | date_att: 2018-11-06
-loc_id : (83969, 145787, 29046) | plant_code : 50494 | R2 : -2555.8821 | date_att: 2018-11-06
-loc_id : (404156,) | plant_code : 3393 | R2 : -0.0161 | date_att: 2018-11-06
-loc_id : (62584,) | plant_code : 1355 | R2 : -1.0805 | date_att: 2018-11-06
-loc_id : (441171,) | plant_code : 1363 | R2 : -1.7228 | date_att: 2018-11-06
-loc_id : (404170,) | plant_code : 1383 | R2 : -3.4805 | date_att: 2018-11-06
-loc_id : (62451, 24335) | plant_code : 1393 | R2 : -1.2568 | date_att: 2018-11-06
-loc_id : (24116, 413853) | plant_code : 1394 | R2 : 0.2677 | date_att: 2018-11-06
-loc_id : (30826,) | plant_code : 3441 | R2 : -0.2012 | date_att: 2018-11-06
-loc_id : (83350, 59862) | plant_code : 1400 | R2 : 0.0918 | date_att: 2018-11-06
-loc_id : (24475,) | plant_code : 1402 | R2 : -2.9246 | date_att: 2018-11-06
-loc_id : (24118,) | plant_code : 1403 | R2 : -2.3213 | date_att: 2018-11-06
-loc_id : (23297, 24486) | plant_code : 1404 | R2 : 0.3984 | date_att: 2018-11-06
-loc_id : (131192, 23671) | plant_code : 50555 | R2 : 0.2695 | date_att: 2018-11-06
-loc_id : (28451,) | plant_code : 3456 | R2 : -17.8535 | date_att: 2018-11-06
-loc_id : (30573,) | plant_code : 3457 | R2 : 0.3572 | date_att: 2018-11-06
-loc_id : (430523, 425887) | plant_code : 1416 | R2 : -557.0230 | date_att: 2018-11-06
-loc_id : (24504,) | plant_code : 3476 | R2 : 0.2938 | date_att: 2018-11-06
-loc_id : (22512,) | plant_code : 3478 | R2 : 0.1805 | date_att: 2018-11-06
-loc_id : (27794,) | plant_code : 3484 | R2 : -2.7819 | date_att: 2018-11-06
-loc_id : (28423,) | plant_code : 3485 | R2 : -0.1718 | date_att: 2018-11-06
-loc_id : (404034,) | plant_code : 1449 | R2 : -0.2815 | date_att: 2018-11-06
-loc_id : (83970, 29063) | plant_code : 50612 | R2 : -0.1946 | date_att: 2018-11-06
-loc_id : (30341,) | plant_code : 1464 | R2 : 0.4371 | date_att: 2018-11-06
-loc_id : (29723,) | plant_code : 50637 | R2 : -4.0107 | date_att: 2018-11-06
-loc_id : (62535,) | plant_code : 50662 | R2 : -15084.4006 | date_att: 2018-11-06
-loc_id : (125206,) | plant_code : 7697 | R2 : -0.5861 | date_att: 2018-11-06
-loc_id : (27735,) | plant_code : 50707 | R2 : -0.8965 | date_att: 2018-11-06
-loc_id : (125115, 31990) | plant_code : 7699 | R2 : 0.1971 | date_att: 2018-11-06
-loc_id : (23944,) | plant_code : 7709 | R2 : -36.7443 | date_att: 2018-11-06
-loc_id : (80645, 80639) | plant_code : 7710 | R2 : -16.8827 | date_att: 2018-11-06
-loc_id : (87009,) | plant_code : 3630 | R2 : -0.2475 | date_att: 2018-11-06
-loc_id : (30543,) | plant_code : 7749 | R2 : -3.7281 | date_att: 2018-11-06
-loc_id : (59919,) | plant_code : 7754 | R2 : 0.4712 | date_att: 2018-11-06
-loc_id : (84229,) | plant_code : 7759 | R2 : 0.1561 | date_att: 2018-11-06
-loc_id : (59942,) | plant_code : 7763 | R2 : -1.5145 | date_att: 2018-11-06
-loc_id : (80851,) | plant_code : 7768 | R2 : -19.9359 | date_att: 2018-11-06
-loc_id : (130993,) | plant_code : 7783 | R2 : -33.6559 | date_att: 2018-11-06
-loc_id : (421560,) | plant_code : 56948 | R2 : -3.5208 | date_att: 2018-11-06
-loc_id : (27024, 26939) | plant_code : 1660 | R2 : -4.8512 | date_att: 2018-11-06
-loc_id : (446337, 445901) | plant_code : 59004 | R2 : -4.0338 | date_att: 2018-11-06
-loc_id : (436002, 435861) | plant_code : 56963 | R2 : -2.7821 | date_att: 2018-11-06
-loc_id : (84212,) | plant_code : 7818 | R2 : -7.2332 | date_att: 2018-11-06
-loc_id : (84976, 84862) | plant_code : 7825 | R2 : -28.1988 | date_att: 2018-11-06
-loc_id : (131273, 23940) | plant_code : 7837 | R2 : -0.5149 | date_att: 2018-11-06
-loc_id : (425204,) | plant_code : 7839 | R2 : 0.0442 | date_att: 2018-11-06
-loc_id : (84846,) | plant_code : 7842 | R2 : -1.7570 | date_att: 2018-11-06
-loc_id : (404155, 84693) | plant_code : 7845 | R2 : -0.8561 | date_att: 2018-11-06
-loc_id : (80760,) | plant_code : 7846 | R2 : -4.2482 | date_att: 2018-11-06
-loc_id : (84239,) | plant_code : 7848 | R2 : 0.1807 | date_att: 2018-11-06
-loc_id : (82237,) | plant_code : 7863 | R2 : -9.8577 | date_att: 2018-11-06
-loc_id : (31996, 125415) | plant_code : 7873 | R2 : -1.7585 | date_att: 2018-11-06
-loc_id : (83508,) | plant_code : 3797 | R2 : -10.8479 | date_att: 2018-11-06
-loc_id : (59848,) | plant_code : 59093 | R2 : 0.3102 | date_att: 2018-11-06
-loc_id : (24568,) | plant_code : 7902 | R2 : -0.7323 | date_att: 2018-11-06
-loc_id : (427981, 427983) | plant_code : 57075 | R2 : -20.3662 | date_att: 2018-11-06
-loc_id : (56125,) | plant_code : 55031 | R2 : -1.0957 | date_att: 2018-11-06
-loc_id : (84247,) | plant_code : 7928 | R2 : -1.2684 | date_att: 2018-11-06
-loc_id : (62680,) | plant_code : 55041 | R2 : 0.3779 | date_att: 2018-11-06
-loc_id : (125485, 31998) | plant_code : 50949 | R2 : -0.5106 | date_att: 2018-11-06
-loc_id : (27011,) | plant_code : 55048 | R2 : -3.1452 | date_att: 2018-11-06
-loc_id : (29874,) | plant_code : 7953 | R2 : -0.2060 | date_att: 2018-11-06
-loc_id : (62679, 84476, 59935) | plant_code : 55063 | R2 : -5.2960 | date_att: 2018-11-06
-loc_id : (28613,) | plant_code : 55064 | R2 : -30.4260 | date_att: 2018-11-06
-loc_id : (432121,) | plant_code : 50969 | R2 : -2.4019 | date_att: 2018-11-06
-loc_id : (21393, 21506, 28605) | plant_code : 55065 | R2 : -0.9546 | date_att: 2018-11-06
-loc_id : (28670,) | plant_code : 7967 | R2 : -5746.7150 | date_att: 2018-11-06
-loc_id : (125330,) | plant_code : 50976 | R2 : -0.8382 | date_att: 2018-11-06
-loc_id : (28678,) | plant_code : 7975 | R2 : -20.5085 | date_att: 2018-11-06
-loc_id : (431435,) | plant_code : 7984 | R2 : -1.3292 | date_att: 2018-11-06
-loc_id : (24763,) | plant_code : 55089 | R2 : -10.3440 | date_att: 2018-11-06
-loc_id : (24681,) | plant_code : 55099 | R2 : 0.0103 | date_att: 2018-11-06
-loc_id : (86530, 21461) | plant_code : 8000 | R2 : -0.1623 | date_att: 2018-11-06
-loc_id : (56126, 29143) | plant_code : 8002 | R2 : 0.3819 | date_att: 2018-11-06
-loc_id : (30562,) | plant_code : 55110 | R2 : 0.1666 | date_att: 2018-11-06
-loc_id : (23344,) | plant_code : 8015 | R2 : -2.5565 | date_att: 2018-11-06
-loc_id : (83852,) | plant_code : 55123 | R2 : -3.0046 | date_att: 2018-11-06
-loc_id : (85799, 28647) | plant_code : 55124 | R2 : 0.0398 | date_att: 2018-11-06
-loc_id : (26961,) | plant_code : 51030 | R2 : -0.4220 | date_att: 2018-11-06
-loc_id : (85841,) | plant_code : 55129 | R2 : -0.7983 | date_att: 2018-11-06
-loc_id : (59944, 84898, 84902) | plant_code : 55131 | R2 : -3.7700 | date_att: 2018-11-06
-loc_id : (428750,) | plant_code : 55135 | R2 : -0.8390 | date_att: 2018-11-06
-loc_id : (404178,) | plant_code : 55148 | R2 : -1.1044 | date_att: 2018-11-06
-loc_id : (145793, 29082, 83974) | plant_code : 55151 | R2 : -0.3801 | date_att: 2018-11-06
-loc_id : (125205,) | plant_code : 8048 | R2 : -0.3984 | date_att: 2018-11-06
-loc_id : (80669,) | plant_code : 6002 | R2 : -2.8168 | date_att: 2018-11-06
-loc_id : (83489,) | plant_code : 10099 | R2 : 0.3540 | date_att: 2018-11-06
-loc_id : (31989,) | plant_code : 8049 | R2 : -0.6083 | date_att: 2018-11-06
-loc_id : (403897, 62518) | plant_code : 8054 | R2 : 0.3016 | date_att: 2018-11-06
-loc_id : (24477,) | plant_code : 8056 | R2 : -6.1698 | date_att: 2018-11-06
-loc_id : (403821,) | plant_code : 55164 | R2 : -0.7973 | date_att: 2018-11-06
-loc_id : (82522, 30347, 24710) | plant_code : 55165 | R2 : -0.7904 | date_att: 2018-11-06
-loc_id : (85846,) | plant_code : 8068 | R2 : 0.3104 | date_att: 2018-11-06
-loc_id : (432192, 125375, 431771, 59991) | plant_code : 55173 | R2 : -6.2048 | date_att: 2018-11-06
-loc_id : (24750,) | plant_code : 55176 | R2 : -16.2332 | date_att: 2018-11-06
-loc_id : (28648, 85801) | plant_code : 55177 | R2 : 0.2527 | date_att: 2018-11-06
-loc_id : (84235, 86174) | plant_code : 55178 | R2 : -0.5397 | date_att: 2018-11-06
-loc_id : (83993, 29083, 145807) | plant_code : 55182 | R2 : -2.2530 | date_att: 2018-11-06
-loc_id : (68132,) | plant_code : 55188 | R2 : -0.2202 | date_att: 2018-11-06
-loc_id : (30603,) | plant_code : 55193 | R2 : 0.4919 | date_att: 2018-11-06
-loc_id : (31992, 418930, 31999) | plant_code : 6042 | R2 : -7.8038 | date_att: 2018-11-06
-loc_id : (424474, 125235, 447810, 31991) | plant_code : 6043 | R2 : -4.7966 | date_att: 2018-11-06
-loc_id : (68137,) | plant_code : 55199 | R2 : 0.2494 | date_att: 2018-11-06
-loc_id : (125178,) | plant_code : 6046 | R2 : -0.9635 | date_att: 2018-11-06
-loc_id : (408098,) | plant_code : 55201 | R2 : -0.9623 | date_att: 2018-11-06
-loc_id : (84968, 84838) | plant_code : 55202 | R2 : -6.3269 | date_att: 2018-11-06
-loc_id : (84832,) | plant_code : 55204 | R2 : -0.3459 | date_att: 2018-11-06
-loc_id : (28673,) | plant_code : 55210 | R2 : -12.7858 | date_att: 2018-11-06
-loc_id : (82233, 82235) | plant_code : 4014 | R2 : -1.0638 | date_att: 2018-11-06
-loc_id : (28624,) | plant_code : 55215 | R2 : -0.6470 | date_att: 2018-11-06
-loc_id : (86066,) | plant_code : 6064 | R2 : 0.2537 | date_att: 2018-11-06
-loc_id : (426537, 30575) | plant_code : 55220 | R2 : -3.4089 | date_att: 2018-11-06
-loc_id : (84844,) | plant_code : 55221 | R2 : -1.3251 | date_att: 2018-11-06
-loc_id : (403816,) | plant_code : 6071 | R2 : -2.6297 | date_att: 2018-11-06
-loc_id : (30922, 24690) | plant_code : 6073 | R2 : -19.7378 | date_att: 2018-11-06
-loc_id : (84970, 84860) | plant_code : 55230 | R2 : -21.3460 | date_att: 2018-11-06
-loc_id : (68027,) | plant_code : 55233 | R2 : -11.2830 | date_att: 2018-11-06
-loc_id : (84238,) | plant_code : 55234 | R2 : -0.3574 | date_att: 2018-11-06
-loc_id : (449612,) | plant_code : 59325 | R2 : 0.0000 | date_att: 2018-11-06
-loc_id : (84856,) | plant_code : 55236 | R2 : -0.3143 | date_att: 2018-11-06
-loc_id : (450370, 450687) | plant_code : 59326 | R2 : -3.4038 | date_att: 2018-11-06
-loc_id : (444742,) | plant_code : 4042 | R2 : -10.4407 | date_att: 2018-11-06
-loc_id : (85834,) | plant_code : 59338 | R2 : -3.7118 | date_att: 2018-11-06
-loc_id : (28021, 83615) | plant_code : 55247 | R2 : -0.4530 | date_att: 2018-11-06
-loc_id : (60013, 144310) | plant_code : 55253 | R2 : 0.0999 | date_att: 2018-11-06
-loc_id : (130992,) | plant_code : 55263 | R2 : -16.8374 | date_att: 2018-11-06
-loc_id : (59947,) | plant_code : 55264 | R2 : -6.4750 | date_att: 2018-11-06
-loc_id : (403884, 403853) | plant_code : 55269 | R2 : -3.8897 | date_att: 2018-11-06
-loc_id : (80746, 432010) | plant_code : 6124 | R2 : -3178.8139 | date_att: 2018-11-06
-loc_id : (59281,) | plant_code : 4078 | R2 : -2.4591 | date_att: 2018-11-06
-loc_id : (28644,) | plant_code : 55282 | R2 : -1.0084 | date_att: 2018-11-06
-loc_id : (83645,) | plant_code : 55284 | R2 : -0.7375 | date_att: 2018-11-06
-loc_id : (28265,) | plant_code : 55285 | R2 : 0.1431 | date_att: 2018-11-06
-loc_id : (432141, 125319) | plant_code : 55286 | R2 : 0.0085 | date_att: 2018-11-06
-loc_id : (62717,) | plant_code : 55293 | R2 : -4.6887 | date_att: 2018-11-06
-loc_id : (32024, 29149) | plant_code : 55294 | R2 : -1.0709 | date_att: 2018-11-06
+loc_id : 80601 | plant_code : 2048 | R2 : 0.2927 | date_att: 2018-11-07
+loc_id : 28646 | plant_code : 55306 | R2 : -1.4963 | date_att: 2018-11-07
+loc_id : 24299 | plant_code : 2068 | R2 : -2.4639 | date_att: 2018-11-07
+loc_id : 24300 | plant_code : 2070 | R2 : -121.2847 | date_att: 2018-11-07
+loc_id : 83858 | plant_code : 55327 | R2 : -17.0924 | date_att: 2018-11-07
+loc_id : 84290;86398 | plant_code : 2092 | R2 : -2.0508 | date_att: 2018-11-07
+loc_id : 423616;84429 | plant_code : 6190 | R2 : 0.1139 | date_att: 2018-11-07
+loc_id : 83149;83183 | plant_code : 47 | R2 : -1.4897 | date_att: 2018-11-07
+loc_id : 28756 | plant_code : 55343 | R2 : -9.0821 | date_att: 2018-11-07
+loc_id : 28017 | plant_code : 55347 | R2 : 0.1823 | date_att: 2018-11-07
+loc_id : 30662;62591 | plant_code : 54 | R2 : 0.1653 | date_att: 2018-11-07
+loc_id : 31179 | plant_code : 4162 | R2 : -29.0424 | date_att: 2018-11-07
+loc_id : 86329 | plant_code : 6223 | R2 : -2.3265 | date_att: 2018-11-07
+loc_id : 83643 | plant_code : 55377 | R2 : -12.1529 | date_att: 2018-11-07
+loc_id : 28272;447418 | plant_code : 55382 | R2 : -0.0671 | date_att: 2018-11-07
+loc_id : 59956 | plant_code : 55391 | R2 : 0.2421 | date_att: 2018-11-07
+loc_id : 84896;410458 | plant_code : 55392 | R2 : -0.2036 | date_att: 2018-11-07
+loc_id : 403851;403791 | plant_code : 55395 | R2 : 0.1945 | date_att: 2018-11-07
+loc_id : 449738;30606 | plant_code : 55397 | R2 : -2.0265 | date_att: 2018-11-07
+loc_id : 432008;80756 | plant_code : 55406 | R2 : -0.7459 | date_att: 2018-11-07
+loc_id : 28575 | plant_code : 117 | R2 : -58.3260 | date_att: 2018-11-07
+loc_id : 125328 | plant_code : 55414 | R2 : 0.3749 | date_att: 2018-11-07
+loc_id : 32002;125348 | plant_code : 55415 | R2 : -0.3020 | date_att: 2018-11-07
+loc_id : 407051;28379;425411 | plant_code : 120 | R2 : -1.9468 | date_att: 2018-11-07
+loc_id : 84904;425985;29132 | plant_code : 55417 | R2 : 0.0541 | date_att: 2018-11-07
+loc_id : 426505;23407 | plant_code : 55418 | R2 : -1.4280 | date_att: 2018-11-07
+loc_id : 413872 | plant_code : 55419 | R2 : -34.2867 | date_att: 2018-11-07
+loc_id : 28840 | plant_code : 126 | R2 : -7.1683 | date_att: 2018-11-07
+loc_id : 28917 | plant_code : 55433 | R2 : -1.1529 | date_att: 2018-11-07
+loc_id : 86991 | plant_code : 55438 | R2 : -2.9817 | date_att: 2018-11-07
+loc_id : 80633;408363 | plant_code : 55440 | R2 : -4.0569 | date_att: 2018-11-07
+loc_id : 27880;27879 | plant_code : 55453 | R2 : -8.9814 | date_att: 2018-11-07
+loc_id : 85838 | plant_code : 55455 | R2 : -2.3985 | date_att: 2018-11-07
+loc_id : 28576 | plant_code : 160 | R2 : -1.4020 | date_att: 2018-11-07
+loc_id : 83012 | plant_code : 55478 | R2 : -2.6326 | date_att: 2018-11-07
+loc_id : 28672;432101;431312 | plant_code : 55481 | R2 : -1.7848 | date_att: 2018-11-07
+loc_id : 86756 | plant_code : 2241 | R2 : -0.6598 | date_att: 2018-11-07
+loc_id : 84906 | plant_code : 55496 | R2 : -0.4010 | date_att: 2018-11-07
+loc_id : 403982 | plant_code : 55502 | R2 : 0.1005 | date_att: 2018-11-07
+loc_id : 27861 | plant_code : 55504 | R2 : -292.9519 | date_att: 2018-11-07
+loc_id : 27866 | plant_code : 55505 | R2 : -10.6251 | date_att: 2018-11-07
+loc_id : 85842 | plant_code : 55522 | R2 : -0.1660 | date_att: 2018-11-07
+loc_id : 415401;445611 | plant_code : 55524 | R2 : 0.0005 | date_att: 2018-11-07
+loc_id : 28660 | plant_code : 55544 | R2 : -1.4697 | date_att: 2018-11-07
+loc_id : 425771;29028 | plant_code : 2324 | R2 : 0.0158 | date_att: 2018-11-07
+loc_id : 85610;85623 | plant_code : 2336 | R2 : -10.8852 | date_att: 2018-11-07
+loc_id : 429088 | plant_code : 2367 | R2 : -339.9265 | date_att: 2018-11-07
+loc_id : 83241;404068;62805 | plant_code : 55620 | R2 : -2.7017 | date_att: 2018-11-07
+loc_id : 425787;29011 | plant_code : 55622 | R2 : -0.0176 | date_att: 2018-11-07
+loc_id : 83971;29029 | plant_code : 329 | R2 : 0.3067 | date_att: 2018-11-07
+loc_id : 27877 | plant_code : 55645 | R2 : -2.4023 | date_att: 2018-11-07
+loc_id : 30842 | plant_code : 2406 | R2 : -7.0046 | date_att: 2018-11-07
+loc_id : 30610 | plant_code : 55654 | R2 : -8.6624 | date_att: 2018-11-07
+loc_id : 145801;83983;29087 | plant_code : 55656 | R2 : -4.2030 | date_att: 2018-11-07
+loc_id : 30014 | plant_code : 2411 | R2 : -22.0573 | date_att: 2018-11-07
+loc_id : 32025;29150 | plant_code : 55661 | R2 : -0.6101 | date_att: 2018-11-07
+loc_id : 29896;29897 | plant_code : 55662 | R2 : -1.3514 | date_att: 2018-11-07
+loc_id : 24771;84910 | plant_code : 55664 | R2 : -0.9037 | date_att: 2018-11-07
+loc_id : 23942;30478 | plant_code : 55667 | R2 : -4.2807 | date_att: 2018-11-07
+loc_id : 23294 | plant_code : 10627 | R2 : -1.5025 | date_att: 2018-11-07
+loc_id : 29018;425724 | plant_code : 55687 | R2 : -2.3878 | date_att: 2018-11-07
+loc_id : 28768 | plant_code : 2442 | R2 : -37.4418 | date_att: 2018-11-07
+loc_id : 28543 | plant_code : 2444 | R2 : -12.3286 | date_att: 2018-11-07
+loc_id : 85827 | plant_code : 2446 | R2 : -4.4070 | date_att: 2018-11-07
+loc_id : 30546;423724 | plant_code : 55694 | R2 : -0.8517 | date_att: 2018-11-07
+loc_id : 21156 | plant_code : 2454 | R2 : -5.0243 | date_att: 2018-11-07
+loc_id : 83968;29077;428998 | plant_code : 10649 | R2 : -0.4847 | date_att: 2018-11-07
+loc_id : 29928 | plant_code : 55733 | R2 : -0.0679 | date_att: 2018-11-07
+loc_id : 435624;62771 | plant_code : 2539 | R2 : -3.2845 | date_att: 2018-11-07
+loc_id : 405312 | plant_code : 6635 | R2 : -0.4846 | date_att: 2018-11-07
+loc_id : 84035 | plant_code : 10745 | R2 : -7.7618 | date_att: 2018-11-07
+loc_id : 85847 | plant_code : 55802 | R2 : 0.4680 | date_att: 2018-11-07
+loc_id : 27896 | plant_code : 508 | R2 : 0.0000 | date_att: 2018-11-07
+loc_id : 444750 | plant_code : 59926 | R2 : -0.0167 | date_att: 2018-11-07
+loc_id : 31976 | plant_code : 55833 | R2 : -0.9455 | date_att: 2018-11-07
+loc_id : 27882;27942 | plant_code : 55835 | R2 : -3.7743 | date_att: 2018-11-07
+loc_id : 82474;410434 | plant_code : 544 | R2 : -2.9733 | date_att: 2018-11-07
+loc_id : 29021;425782 | plant_code : 55841 | R2 : -1.0313 | date_att: 2018-11-07
+loc_id : 425384;27005 | plant_code : 562 | R2 : 0.1655 | date_att: 2018-11-07
+loc_id : 125417;428557;145638 | plant_code : 564 | R2 : -2.3863 | date_att: 2018-11-07
+loc_id : 83731;130703 | plant_code : 2625 | R2 : -0.4523 | date_att: 2018-11-07
+loc_id : 125265;441756 | plant_code : 609 | R2 : -1.0312 | date_att: 2018-11-07
+loc_id : 125451;125452 | plant_code : 613 | R2 : -2.5013 | date_att: 2018-11-07
+loc_id : 125269;443431 | plant_code : 617 | R2 : -0.1078 | date_att: 2018-11-07
+loc_id : 125284;125439 | plant_code : 621 | R2 : -6.1146 | date_att: 2018-11-07
+loc_id : 125294 | plant_code : 624 | R2 : -10.5064 | date_att: 2018-11-07
+loc_id : 417922 | plant_code : 10870 | R2 : -2.1620 | date_att: 2018-11-07
+loc_id : 125240 | plant_code : 630 | R2 : -3.2626 | date_att: 2018-11-07
+loc_id : 62718 | plant_code : 2682 | R2 : -1.2275 | date_att: 2018-11-07
+loc_id : 125179;31975 | plant_code : 634 | R2 : -16.4215 | date_att: 2018-11-07
+loc_id : 426130;80839 | plant_code : 638 | R2 : -1.5388 | date_att: 2018-11-07
+loc_id : 85871 | plant_code : 6791 | R2 : -20.1551 | date_att: 2018-11-07
+loc_id : 125249;125253 | plant_code : 663 | R2 : -1.1626 | date_att: 2018-11-07
+loc_id : 125153;125285 | plant_code : 665 | R2 : -0.5963 | date_att: 2018-11-07
+loc_id : 125379 | plant_code : 675 | R2 : -0.3940 | date_att: 2018-11-07
+loc_id : 125489;31994 | plant_code : 676 | R2 : -0.5782 | date_att: 2018-11-07
+loc_id : 30611;449742 | plant_code : 55976 | R2 : -0.1313 | date_att: 2018-11-07
+loc_id : 125263 | plant_code : 683 | R2 : -8.2367 | date_att: 2018-11-07
+loc_id : 125318 | plant_code : 688 | R2 : -0.2260 | date_att: 2018-11-07
+loc_id : 125407 | plant_code : 689 | R2 : -0.5770 | date_att: 2018-11-07
+loc_id : 125304 | plant_code : 693 | R2 : -8.2565 | date_att: 2018-11-07
+loc_id : 21458 | plant_code : 56013 | R2 : -1010.9211 | date_att: 2018-11-07
+loc_id : 29882 | plant_code : 56017 | R2 : 0.0000 | date_att: 2018-11-07
+loc_id : 449951 | plant_code : 56047 | R2 : 0.0000 | date_att: 2018-11-07
+loc_id : 30584 | plant_code : 2847 | R2 : -5.2287 | date_att: 2018-11-07
+loc_id : 83610 | plant_code : 2854 | R2 : -5.2319 | date_att: 2018-11-07
+loc_id : 83609 | plant_code : 2869 | R2 : 0.0000 | date_att: 2018-11-07
+loc_id : 406682 | plant_code : 4939 | R2 : 0.3784 | date_att: 2018-11-07
+loc_id : 447312;450249;447311 | plant_code : 50006 | R2 : -29.9213 | date_att: 2018-11-07
+loc_id : 86063 | plant_code : 56151 | R2 : -0.2921 | date_att: 2018-11-07
+loc_id : 23306 | plant_code : 54104 | R2 : -2.1719 | date_att: 2018-11-07
+loc_id : 436305;422965;85382 | plant_code : 862 | R2 : -0.0429 | date_att: 2018-11-07
+loc_id : 60053 | plant_code : 56166 | R2 : -0.2281 | date_att: 2018-11-07
+loc_id : 447143 | plant_code : 52072 | R2 : 0.1806 | date_att: 2018-11-07
+loc_id : 428996 | plant_code : 52085 | R2 : -11.8591 | date_att: 2018-11-07
+loc_id : 84474;84371;84475 | plant_code : 887 | R2 : 0.2159 | date_att: 2018-11-07
+loc_id : 443794 | plant_code : 58236 | R2 : 0.4999 | date_att: 2018-11-07
+loc_id : 29208 | plant_code : 913 | R2 : 0.4775 | date_att: 2018-11-07
+loc_id : 29529 | plant_code : 56227 | R2 : 0.1069 | date_att: 2018-11-07
+loc_id : 425751;29007 | plant_code : 7082 | R2 : -17.5726 | date_att: 2018-11-07
+loc_id : 29027 | plant_code : 56237 | R2 : -2.7272 | date_att: 2018-11-07
+loc_id : 68141 | plant_code : 56238 | R2 : -0.1544 | date_att: 2018-11-07
+loc_id : 446220 | plant_code : 52151 | R2 : -2.5810 | date_att: 2018-11-07
+loc_id : 405440 | plant_code : 3008 | R2 : -1.9697 | date_att: 2018-11-07
+loc_id : 29040;145811;83999 | plant_code : 50134 | R2 : -88.8223 | date_att: 2018-11-07
+loc_id : 24853 | plant_code : 56283 | R2 : -18.3093 | date_att: 2018-11-07
+loc_id : 20096 | plant_code : 7137 | R2 : -0.7025 | date_att: 2018-11-07
+loc_id : 30593;404177 | plant_code : 7158 | R2 : -0.2879 | date_att: 2018-11-07
+loc_id : 59307 | plant_code : 7159 | R2 : 0.1839 | date_att: 2018-11-07
+loc_id : 84724 | plant_code : 1048 | R2 : -0.2044 | date_att: 2018-11-07
+loc_id : 62513 | plant_code : 54324 | R2 : -0.9663 | date_att: 2018-11-07
+loc_id : 442931 | plant_code : 58420 | R2 : -1.9939 | date_att: 2018-11-07
+loc_id : 31978;125131 | plant_code : 7238 | R2 : -11.7146 | date_att: 2018-11-07
+loc_id : 146290 | plant_code : 7242 | R2 : 0.4806 | date_att: 2018-11-07
+loc_id : 130633 | plant_code : 3148 | R2 : -0.7780 | date_att: 2018-11-07
+loc_id : 31980 | plant_code : 54365 | R2 : -1.0004 | date_att: 2018-11-07
+loc_id : 86393 | plant_code : 7281 | R2 : -7.5189 | date_att: 2018-11-07
+loc_id : 27925 | plant_code : 56445 | R2 : -1.2327 | date_att: 2018-11-07
+loc_id : 86330;86331 | plant_code : 7296 | R2 : -3.6607 | date_att: 2018-11-07
+loc_id : 125177;31988 | plant_code : 7302 | R2 : -6.6206 | date_att: 2018-11-07
+loc_id : 28857 | plant_code : 56458 | R2 : -1.7523 | date_att: 2018-11-07
+loc_id : 125133 | plant_code : 54426 | R2 : -0.3272 | date_att: 2018-11-07
+loc_id : 85012 | plant_code : 7325 | R2 : -28.8609 | date_att: 2018-11-07
+loc_id : 86100 | plant_code : 56497 | R2 : 0.2468 | date_att: 2018-11-07
+loc_id : 125114 | plant_code : 7345 | R2 : -5.0978 | date_att: 2018-11-07
+loc_id : 85622 | plant_code : 56500 | R2 : 0.1274 | date_att: 2018-11-07
+loc_id : 426330 | plant_code : 1230 | R2 : -0.2001 | date_att: 2018-11-07
+loc_id : 31995;125246 | plant_code : 7380 | R2 : -1.2055 | date_att: 2018-11-07
+loc_id : 83249 | plant_code : 50389 | R2 : -66.1601 | date_att: 2018-11-07
+loc_id : 86328 | plant_code : 1239 | R2 : -1.3659 | date_att: 2018-11-07
+loc_id : 27719 | plant_code : 7393 | R2 : -0.6409 | date_att: 2018-11-07
+loc_id : 86367 | plant_code : 1252 | R2 : 0.2957 | date_att: 2018-11-07
+loc_id : 405736 | plant_code : 56556 | R2 : -8.4318 | date_att: 2018-11-07
+loc_id : 428460 | plant_code : 56564 | R2 : -1.2947 | date_att: 2018-11-07
+loc_id : 83011 | plant_code : 3325 | R2 : -1.9890 | date_att: 2018-11-07
+loc_id : 85877 | plant_code : 1279 | R2 : -9.8039 | date_att: 2018-11-07
+loc_id : 84198 | plant_code : 7425 | R2 : -1.6131 | date_att: 2018-11-07
+loc_id : 85913 | plant_code : 1295 | R2 : -0.3863 | date_att: 2018-11-07
+loc_id : 442920;443194;68293 | plant_code : 56603 | R2 : -6.3800 | date_att: 2018-11-07
+loc_id : 28477 | plant_code : 7456 | R2 : -2.1216 | date_att: 2018-11-07
+loc_id : 441916 | plant_code : 50481 | R2 : 0.1184 | date_att: 2018-11-07
+loc_id : 83969;145787;29046 | plant_code : 50494 | R2 : -2555.8821 | date_att: 2018-11-07
+loc_id : 404156 | plant_code : 3393 | R2 : -0.0161 | date_att: 2018-11-07
+loc_id : 62584 | plant_code : 1355 | R2 : -1.0805 | date_att: 2018-11-07
+loc_id : 441171 | plant_code : 1363 | R2 : -1.7228 | date_att: 2018-11-07
+loc_id : 404170 | plant_code : 1383 | R2 : -3.4805 | date_att: 2018-11-07
+loc_id : 62451;24335 | plant_code : 1393 | R2 : -1.2568 | date_att: 2018-11-07
+loc_id : 24116;413853 | plant_code : 1394 | R2 : 0.2677 | date_att: 2018-11-07
+loc_id : 30826 | plant_code : 3441 | R2 : -0.2012 | date_att: 2018-11-07
+loc_id : 83350;59862 | plant_code : 1400 | R2 : 0.0918 | date_att: 2018-11-07
+loc_id : 24475 | plant_code : 1402 | R2 : -2.9246 | date_att: 2018-11-07
+loc_id : 24118 | plant_code : 1403 | R2 : -2.3213 | date_att: 2018-11-07
+loc_id : 23297;24486 | plant_code : 1404 | R2 : 0.3984 | date_att: 2018-11-07
+loc_id : 131192;23671 | plant_code : 50555 | R2 : 0.2695 | date_att: 2018-11-07
+loc_id : 28451 | plant_code : 3456 | R2 : -17.8535 | date_att: 2018-11-07
+loc_id : 30573 | plant_code : 3457 | R2 : 0.3572 | date_att: 2018-11-07
+loc_id : 430523;425887 | plant_code : 1416 | R2 : -557.0230 | date_att: 2018-11-07
+loc_id : 24504 | plant_code : 3476 | R2 : 0.2938 | date_att: 2018-11-07
+loc_id : 22512 | plant_code : 3478 | R2 : 0.1805 | date_att: 2018-11-07
+loc_id : 27794 | plant_code : 3484 | R2 : -2.7819 | date_att: 2018-11-07
+loc_id : 28423 | plant_code : 3485 | R2 : -0.1718 | date_att: 2018-11-07
+loc_id : 404034 | plant_code : 1449 | R2 : -0.2815 | date_att: 2018-11-07
+loc_id : 83970;29063 | plant_code : 50612 | R2 : -0.1946 | date_att: 2018-11-07
+loc_id : 30341 | plant_code : 1464 | R2 : 0.4371 | date_att: 2018-11-07
+loc_id : 29723 | plant_code : 50637 | R2 : -4.0107 | date_att: 2018-11-07
+loc_id : 62535 | plant_code : 50662 | R2 : -15084.4006 | date_att: 2018-11-07
+loc_id : 125206 | plant_code : 7697 | R2 : -0.5861 | date_att: 2018-11-07
+loc_id : 27735 | plant_code : 50707 | R2 : -0.8965 | date_att: 2018-11-07
+loc_id : 125115;31990 | plant_code : 7699 | R2 : 0.1971 | date_att: 2018-11-07
+loc_id : 23944 | plant_code : 7709 | R2 : -36.7443 | date_att: 2018-11-07
+loc_id : 80645;80639 | plant_code : 7710 | R2 : -16.8827 | date_att: 2018-11-07
+loc_id : 87009 | plant_code : 3630 | R2 : -0.2475 | date_att: 2018-11-07
+loc_id : 30543 | plant_code : 7749 | R2 : -3.7281 | date_att: 2018-11-07
+loc_id : 59919 | plant_code : 7754 | R2 : 0.4712 | date_att: 2018-11-07
+loc_id : 84229 | plant_code : 7759 | R2 : 0.1561 | date_att: 2018-11-07
+loc_id : 59942 | plant_code : 7763 | R2 : -1.5145 | date_att: 2018-11-07
+loc_id : 80851 | plant_code : 7768 | R2 : -19.9359 | date_att: 2018-11-07
+loc_id : 130993 | plant_code : 7783 | R2 : -33.6559 | date_att: 2018-11-07
+loc_id : 421560 | plant_code : 56948 | R2 : -3.5208 | date_att: 2018-11-07
+loc_id : 27024;26939 | plant_code : 1660 | R2 : -4.8512 | date_att: 2018-11-07
+loc_id : 446337;445901 | plant_code : 59004 | R2 : -4.0338 | date_att: 2018-11-07
+loc_id : 436002;435861 | plant_code : 56963 | R2 : -2.7821 | date_att: 2018-11-07
+loc_id : 84212 | plant_code : 7818 | R2 : -7.2332 | date_att: 2018-11-07
+loc_id : 84976;84862 | plant_code : 7825 | R2 : -28.1988 | date_att: 2018-11-07
+loc_id : 131273;23940 | plant_code : 7837 | R2 : -0.5149 | date_att: 2018-11-07
+loc_id : 425204 | plant_code : 7839 | R2 : 0.0442 | date_att: 2018-11-07
+loc_id : 84846 | plant_code : 7842 | R2 : -1.7570 | date_att: 2018-11-07
+loc_id : 404155;84693 | plant_code : 7845 | R2 : -0.8561 | date_att: 2018-11-07
+loc_id : 80760 | plant_code : 7846 | R2 : -4.2482 | date_att: 2018-11-07
+loc_id : 84239 | plant_code : 7848 | R2 : 0.1807 | date_att: 2018-11-07
+loc_id : 82237 | plant_code : 7863 | R2 : -9.8577 | date_att: 2018-11-07
+loc_id : 31996;125415 | plant_code : 7873 | R2 : -1.7585 | date_att: 2018-11-07
+loc_id : 83508 | plant_code : 3797 | R2 : -10.8479 | date_att: 2018-11-07
+loc_id : 59848 | plant_code : 59093 | R2 : 0.3102 | date_att: 2018-11-07
+loc_id : 24568 | plant_code : 7902 | R2 : -0.7323 | date_att: 2018-11-07
+loc_id : 427981;427983 | plant_code : 57075 | R2 : -20.3662 | date_att: 2018-11-07
+loc_id : 56125 | plant_code : 55031 | R2 : -1.0957 | date_att: 2018-11-07
+loc_id : 84247 | plant_code : 7928 | R2 : -1.2684 | date_att: 2018-11-07
+loc_id : 62680 | plant_code : 55041 | R2 : 0.3779 | date_att: 2018-11-07
+loc_id : 125485;31998 | plant_code : 50949 | R2 : -0.5106 | date_att: 2018-11-07
+loc_id : 27011 | plant_code : 55048 | R2 : -3.1452 | date_att: 2018-11-07
+loc_id : 29874 | plant_code : 7953 | R2 : -0.2060 | date_att: 2018-11-07
+loc_id : 62679;84476;59935 | plant_code : 55063 | R2 : -5.2960 | date_att: 2018-11-07
+loc_id : 28613 | plant_code : 55064 | R2 : -30.4260 | date_att: 2018-11-07
+loc_id : 432121 | plant_code : 50969 | R2 : -2.4019 | date_att: 2018-11-07
+loc_id : 21393;21506;28605 | plant_code : 55065 | R2 : -0.9546 | date_att: 2018-11-07
+loc_id : 28670 | plant_code : 7967 | R2 : -5746.7150 | date_att: 2018-11-07
+loc_id : 125330 | plant_code : 50976 | R2 : -0.8382 | date_att: 2018-11-07
+loc_id : 28678 | plant_code : 7975 | R2 : -20.5085 | date_att: 2018-11-07
+loc_id : 431435 | plant_code : 7984 | R2 : -1.3292 | date_att: 2018-11-07
+loc_id : 24763 | plant_code : 55089 | R2 : -10.3440 | date_att: 2018-11-07
+loc_id : 24681 | plant_code : 55099 | R2 : 0.0103 | date_att: 2018-11-07
+loc_id : 86530;21461 | plant_code : 8000 | R2 : -0.1623 | date_att: 2018-11-07
+loc_id : 56126;29143 | plant_code : 8002 | R2 : 0.3819 | date_att: 2018-11-07
+loc_id : 30562 | plant_code : 55110 | R2 : 0.1666 | date_att: 2018-11-07
+loc_id : 23344 | plant_code : 8015 | R2 : -2.5565 | date_att: 2018-11-07
+loc_id : 83852 | plant_code : 55123 | R2 : -3.0046 | date_att: 2018-11-07
+loc_id : 85799;28647 | plant_code : 55124 | R2 : 0.0398 | date_att: 2018-11-07
+loc_id : 26961 | plant_code : 51030 | R2 : -0.4220 | date_att: 2018-11-07
+loc_id : 85841 | plant_code : 55129 | R2 : -0.7983 | date_att: 2018-11-07
+loc_id : 59944;84898;84902 | plant_code : 55131 | R2 : -3.7700 | date_att: 2018-11-07
+loc_id : 428750 | plant_code : 55135 | R2 : -0.8390 | date_att: 2018-11-07
+loc_id : 404178 | plant_code : 55148 | R2 : -1.1044 | date_att: 2018-11-07
+loc_id : 145793;29082;83974 | plant_code : 55151 | R2 : -0.3801 | date_att: 2018-11-07
+loc_id : 125205 | plant_code : 8048 | R2 : -0.3984 | date_att: 2018-11-07
+loc_id : 80669 | plant_code : 6002 | R2 : -2.8168 | date_att: 2018-11-07
+loc_id : 83489 | plant_code : 10099 | R2 : 0.3540 | date_att: 2018-11-07
+loc_id : 31989 | plant_code : 8049 | R2 : -0.6083 | date_att: 2018-11-07
+loc_id : 403897;62518 | plant_code : 8054 | R2 : 0.3016 | date_att: 2018-11-07
+loc_id : 24477 | plant_code : 8056 | R2 : -6.1698 | date_att: 2018-11-07
+loc_id : 403821 | plant_code : 55164 | R2 : -0.7973 | date_att: 2018-11-07
+loc_id : 82522;30347;24710 | plant_code : 55165 | R2 : -0.7904 | date_att: 2018-11-07
+loc_id : 85846 | plant_code : 8068 | R2 : 0.3104 | date_att: 2018-11-07
+loc_id : 432192;125375;431771;59991 | plant_code : 55173 | R2 : -6.2048 | date_att: 2018-11-07
+loc_id : 24750 | plant_code : 55176 | R2 : -16.2332 | date_att: 2018-11-07
+loc_id : 28648;85801 | plant_code : 55177 | R2 : 0.2527 | date_att: 2018-11-07
+loc_id : 84235;86174 | plant_code : 55178 | R2 : -0.5397 | date_att: 2018-11-07
+loc_id : 83993;29083;145807 | plant_code : 55182 | R2 : -2.2530 | date_att: 2018-11-07
+loc_id : 68132 | plant_code : 55188 | R2 : -0.2202 | date_att: 2018-11-07
+loc_id : 30603 | plant_code : 55193 | R2 : 0.4919 | date_att: 2018-11-07
+loc_id : 31992;418930;31999 | plant_code : 6042 | R2 : -7.8038 | date_att: 2018-11-07
+loc_id : 424474;125235;447810;31991 | plant_code : 6043 | R2 : -4.7966 | date_att: 2018-11-07
+loc_id : 68137 | plant_code : 55199 | R2 : 0.2494 | date_att: 2018-11-07
+loc_id : 125178 | plant_code : 6046 | R2 : -0.9635 | date_att: 2018-11-07
+loc_id : 408098 | plant_code : 55201 | R2 : -0.9623 | date_att: 2018-11-07
+loc_id : 84968;84838 | plant_code : 55202 | R2 : -6.3269 | date_att: 2018-11-07
+loc_id : 84832 | plant_code : 55204 | R2 : -0.3459 | date_att: 2018-11-07
+loc_id : 28673 | plant_code : 55210 | R2 : -12.7858 | date_att: 2018-11-07
+loc_id : 82233;82235 | plant_code : 4014 | R2 : -1.0638 | date_att: 2018-11-07
+loc_id : 28624 | plant_code : 55215 | R2 : -0.6470 | date_att: 2018-11-07
+loc_id : 86066 | plant_code : 6064 | R2 : 0.2537 | date_att: 2018-11-07
+loc_id : 426537;30575 | plant_code : 55220 | R2 : -3.4089 | date_att: 2018-11-07
+loc_id : 84844 | plant_code : 55221 | R2 : -1.3251 | date_att: 2018-11-07
+loc_id : 403816 | plant_code : 6071 | R2 : -2.6297 | date_att: 2018-11-07
+loc_id : 30922;24690 | plant_code : 6073 | R2 : -19.7378 | date_att: 2018-11-07
+loc_id : 84970;84860 | plant_code : 55230 | R2 : -21.3460 | date_att: 2018-11-07
+loc_id : 68027 | plant_code : 55233 | R2 : -11.2830 | date_att: 2018-11-07
+loc_id : 84238 | plant_code : 55234 | R2 : -0.3574 | date_att: 2018-11-07
+loc_id : 449612 | plant_code : 59325 | R2 : 0.0000 | date_att: 2018-11-07
+loc_id : 84856 | plant_code : 55236 | R2 : -0.3143 | date_att: 2018-11-07
+loc_id : 450370;450687 | plant_code : 59326 | R2 : -3.4038 | date_att: 2018-11-07
+loc_id : 444742 | plant_code : 4042 | R2 : -10.4407 | date_att: 2018-11-07
+loc_id : 85834 | plant_code : 59338 | R2 : -3.7118 | date_att: 2018-11-07
+loc_id : 28021;83615 | plant_code : 55247 | R2 : -0.4530 | date_att: 2018-11-07
+loc_id : 60013;144310 | plant_code : 55253 | R2 : 0.0999 | date_att: 2018-11-07
+loc_id : 130992 | plant_code : 55263 | R2 : -16.8374 | date_att: 2018-11-07
+loc_id : 59947 | plant_code : 55264 | R2 : -6.4750 | date_att: 2018-11-07
+loc_id : 403884;403853 | plant_code : 55269 | R2 : -3.8897 | date_att: 2018-11-07
+loc_id : 80746;432010 | plant_code : 6124 | R2 : -3178.8139 | date_att: 2018-11-07
+loc_id : 59281 | plant_code : 4078 | R2 : -2.4591 | date_att: 2018-11-07
+loc_id : 28644 | plant_code : 55282 | R2 : -1.0084 | date_att: 2018-11-07
+loc_id : 83645 | plant_code : 55284 | R2 : -0.7375 | date_att: 2018-11-07
+loc_id : 28265 | plant_code : 55285 | R2 : 0.1431 | date_att: 2018-11-07
+loc_id : 432141;125319 | plant_code : 55286 | R2 : 0.0085 | date_att: 2018-11-07
+loc_id : 62717 | plant_code : 55293 | R2 : -4.6887 | date_att: 2018-11-07
+loc_id : 32024;29149 | plant_code : 55294 | R2 : -1.0709 | date_att: 2018-11-07
