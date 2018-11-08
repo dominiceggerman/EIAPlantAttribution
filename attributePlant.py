@@ -81,8 +81,8 @@ def locationPlantMap(conn):
 
 
 # Get nominations data for a single location id
-def getCapacityData(conn, plt_id):
-    statement = """SELECT date_trunc('month', ctnn.gas_day)::date AS insight_date, SUM((ctnn.scheduled_cap + ctnn.no_notice_cap) * r.sign * -1) AS insight_noms
+def getCapacityData(conn, plt_id):  # ?? No notice ??
+    statement = """SELECT date_trunc('month', ctnn.gas_day)::date AS insight_date, SUM((ctnn.scheduled_cap) * r.sign * -1) AS insight_noms
                     FROM analysts.captrans_with_no_notice AS ctnn
                     INNER JOIN analysts.location_role_v AS lr ON ctnn.location_role_id = lr.id
                     INNER JOIN analysts.location_v AS l ON lr.location_id = l.id
