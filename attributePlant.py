@@ -106,29 +106,29 @@ def getCapacityData(conn, plt_id):
 
 # Get plants that have already been analyze
 def analyzedPlants():
-    analyzed_locs = []
+    analyzed_plts = []
     with open("attribution_issues.txt", mode="r") as file1:
         for line in file1:
             try:
-                loc = line.rstrip().split("|")[0].split(":")[1].strip()
-                analyzed_locs.append(int(loc))
+                plt = line.rstrip().split("|")[1].split(":")[1].strip()
+                analyzed_plts.append(int(plt))
             except IndexError:
                 pass
     with open("confirmed_attributions.txt", mode="r") as file2:
         for line in file2:
             try:
-                loc = line.rstrip().split("|")[0].split(":")[1].strip()
-                analyzed_locs.append(int(loc))
+                plt = line.rstrip().split("|")[1].split(":")[1].strip()
+                analyzed_plts.append(int(plt))
             except IndexError:
                 pass
     with open("database_issues.txt", mode="r") as file3:
         for line in file3:
             try:
-                loc = line.rstrip().split("|")[0].split(":")[1].strip()
-                analyzed_locs.append(int(loc))
+                plt = line.rstrip().split("|")[1].split(":")[1].strip()
+                analyzed_plts.append(int(plt))
             except IndexError:
                 pass
-    return analyzed_locs
+    return analyzed_plts
 
 
 # Merge EIA and insight dataframes
@@ -192,9 +192,17 @@ if __name__ == "__main__":
         # Read master data file
         master_df = pd.read_csv("masterCapData.csv")
 
+        # List of previously analyzed plants
+        analyzed_plants = analyzedPlants()
+
         # Iterate through unique EIA plant codes
         for ind, plant in enumerate(list(set(master_df["plant_code"].values))):
             print("Analyzing plant: {0} | {1}/{2}".format(plant, ind, len(list(set(master_df["plant_code"].values)))))
+
+            # Skip if plant has been analyzed
+            if plant in analyzed_plants:
+                print("Plant already analyzed. Skipping.")
+                continue
 
             # Filter the data for a single plant
             cap_data = master_df.loc[master_df["plant_code"] == plant]
@@ -252,7 +260,8 @@ if __name__ == "__main__":
             connection.close()
             print("Error encountered while querying for plant locations and codes.")
 
-        # Remove plants from list that have already been analyzed
+        # Update with new ??
+        # # Remove plants from list that have already been analyzed
         # analyzed_locs = analyzedPlants()
         # for loc in analyzed_locs:
         #     plant_locs = plant_locs[plant_locs.location_id != loc]
@@ -266,7 +275,6 @@ if __name__ == "__main__":
         for ind, (location_id, plant_code) in enumerate(zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values)):
             # Open connection
             connection = connect(username, password)
-            plant_code = 6071
 
             print("| Analyzing Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values)))
             try:
