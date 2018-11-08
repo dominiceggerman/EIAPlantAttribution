@@ -7,7 +7,7 @@ import numpy as np
 import json
 import datetime
 import argparse
-import sklearn.metrics as sk
+import scipy.stats as scistats
 import matplotlib.pyplot as plt
 from urllib.error import URLError, HTTPError
 from urllib.request import urlopen
@@ -149,7 +149,8 @@ def mergeDf(eia, insight):
 def scoreR2(df):
     try:
         # Score the R squared
-        r2 = sk.r2_score(df["eia_noms"].values, df["insight_noms"].values)
+        r = scistats.linregress(df["eia_noms"].values, df["insight_noms"].values).rvalue
+        r2 = r * r  # Get R2
         return r2
     except ValueError:
         return None
@@ -252,9 +253,9 @@ if __name__ == "__main__":
             print("Error encountered while querying for plant locations and codes.")
 
         # Remove plants from list that have already been analyzed
-        analyzed_locs = analyzedPlants()
-        for loc in analyzed_locs:
-            plant_locs = plant_locs[plant_locs.location_id != loc]
+        # analyzed_locs = analyzedPlants()
+        # for loc in analyzed_locs:
+        #     plant_locs = plant_locs[plant_locs.location_id != loc]
         
         print("{0} plants have not been analyzed".format(len(plant_locs["location_id"].values)))
 
@@ -265,6 +266,7 @@ if __name__ == "__main__":
         for ind, (location_id, plant_code) in enumerate(zip(plant_locs["location_id"].values, plant_locs["eia_plant_code"].values)):
             # Open connection
             connection = connect(username, password)
+            plant_code = 6071
 
             print("| Analyzing Plant {0} / {1} |".format(ind+1, len(plant_locs["location_id"].values)))
             try:
