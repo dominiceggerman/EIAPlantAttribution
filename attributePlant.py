@@ -150,7 +150,7 @@ def truncateDates(df):
     # Start a count log (for purposes of having 2, 3, or 4 loc_ids)
     num_locs = 1
     # Loop through dates
-    for ind, d in enumerate(df["eia_date"].values):
+    for ind in range(len(df["eia_date"].values)):
         try:
             if df["eia_date"].values[ind] == df["eia_date"].values[ind+1]:
                 num_locs += 1
