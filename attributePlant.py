@@ -145,6 +145,29 @@ def mergeDf(eia, insight):
     return merged_df
 
 
+# Sum nominations in dataframe for same dates
+def truncateDates(df):
+    # Start a count log (for purposes of having 2, 3, or 4 loc_ids)
+    num_locs = 1
+    # Loop through dates
+    for ind, d in enumerate(df["eia_date"].values):
+        try:
+            if df["eia_date"].values[ind] == df["eia_date"].values[ind+1]:
+                num_locs += 1
+            else:
+                break
+        except:
+            pass
+    # Filter dates and EIA noms
+    dates = df["eia_date"].values[::num_locs]
+    eia_noms = df["eia_noms"].values[::num_locs]
+    # Sum inisght noms
+    insight_noms = [sum(df["insight_noms"].values[i:i+num_locs]) for i in range(0, len(df["insight_noms"].values), num_locs)]
+
+    return pd.DataFrame({"eia_date":dates, "eia_noms":eia_noms, "insight_noms":insight_noms})
+    
+
+
 # Score the r2 of a merged dataframe
 def scoreR2(df):
     try:
@@ -222,7 +245,7 @@ if __name__ == "__main__":
                 continue
 
             # Merge the dataframes
-            merged_df = mergeDf(eia_data, cap_data)
+            merged_df = truncateDates(mergeDf(eia_data, cap_data))
 
             # Score the r2
             r2 = scoreR2(merged_df)
